@@ -1,0 +1,80 @@
+﻿l_english:
+ FE:0 "STREGA"
+
+PERDITION_BEAM_DREADNOUGHTSTRG:0 "900 MM Dreadnought Beam Cannon"
+PERDITION_BEAM_DREADNOUGHTSTRG_DESC:0 "This Beam Cannon from a Dreadnought can punch through most armors or shields currently know."
+
+tech_STRG_Advanced_Ship_Desgin:0 "Advanced Ship Design"
+tech_STRG_Advanced_Ship_Desgin_desc:0 "With the advent of heavier and larger hulls, our older, smaller ship designs are now comparatively lacking on the modern battlefield. We will update them using newer design technologies to incorporate more weapons and armour, allowing them to keep up with newer designs. We have also devised a number of alternative hulls for our larger ships in the process."
+
+TECH_UNLOCK_STRG:0 "Unlocks Advanced Ship Desgin sections for ships smaller than Battleships, and alternatives for Titans, Flagships and Carriers."
+TECH_UNLOCK_STRG_DESC:0 "With the advent of heavier and larger hulls, our older, smaller ship designs are now comparatively lacking on the modern battlefield. We will update them using newer design technologies to incorporate more weapons and armour, allowing them to keep up with newer designs. We have also devised a number of alternative hulls for our larger ships in the process."
+
+#####Ship Desgin#######
+
+CORVETTE_MID_CYS1DA:0 "Advanced Corvette"
+
+DESTROYER_BOW_CYS1D:0 "Advanced Bow"
+DESTROYER_STERN_CYS1D:0 "Advanced Stern"
+DESTROYER_STERN_H1:0 "Destroyer Hangar Stern"
+
+CRUISER_BOW_CYS1D:0 "Advanced Bow"
+CRUISER_MID_CYS1D:0 "Advanced Core"
+CRUISER_STERN_CYS1D:0 "Advanced Stern"
+CRUISER_STERN_H1:0 "Cruiser Hangar Stern"
+
+BATTLECRUISER_BOW_CYS1L2D:0 "Advanced Bow"
+BATTLECRUISER_MID1_CYS1G4D:0 "Advanced Core 1"
+BATTLECRUISER_MID2_CYS1G4D:0 "Advanced Core 2"
+BATTLECRUISER_MID3_CYS1G4D:0 "Advanced Core 3"
+BATTLECRUISER_STERN_CYS1PD3D:0 "Advanced Stern"
+BATTLECRUISER_STERN_H2:0 "Battlecruiser Hangar Stern"
+
+BATTLESHIP_BOW_CYSXL1D:0 "Advanced Bow"
+BATTLESHIP_MID_CYS1DL4:0 "Advanced Mid"
+BATTLESHIP_STERN_CYS1D4:0 "Advanced Stern"
+BATTLESHIP_STERN_H2:0 "Battleship Hangar Stern"
+
+CARRIER_BOW_CYS1PD2:0 "Battle Carrier Bow"
+CARRIER_MID1_CYS1HSB:0 "Battle Carrier Core"
+CARRIER_MID2_CYS12HB:0 "Battle Carrier Core 2"
+CARRIER_STERN_CYS1D2:0 "Battle Carrier Stern"
+
+ESCORTCARRIER_BOW_CYS1G2D:0 "Advanced Bow"
+ESCORTCARRIER_MID1_CYSPD2H1D:0 "Advanced Carrier Core 1"
+ESCORTCARRIER_MID2_CYSPD2H1D:0 "Advanced Carrier Core 2"
+ESCORTCARRIER_STERN_CYS1S2D:0 "Advanced Stern"
+
+STRIKECRUISER_BOW_CYSG1S4D:0 "Advanced Bow"
+STRIKECRUISER_MID_CYS1S6D:0 "Advanced Core"
+STRIKECRUISER_STERN_CYS1M2D:0 "Advanced Stern"
+STRIKECRUISER_STERN_H1:0 "Strike Cruiser Hangar Stern"
+
+
+DREADNOUGHT_BOW_T1:0 "Titanic Spinal Mount Bow"
+DREADNOUGHT_BOW_CYS1LX2:0 "Advanced Dreadnought Bow"
+DREADNOUGHT_MID1_CYS1DL6:0 "Advanced Dreadnought Core 1"
+DREADNOUGHT_MID1_PD20:0 "Point Defense Core 1"
+DREADNOUGHT_MID1_X3:0 "Devestator Core 1"
+DREADNOUGHT_MID2_CYS1M7:0 "Advanced Dreadnought Core 2"
+DREADNOUGHT_MID2_PD20:0 "Point Defense Core 2"
+DREADNOUGHT_MID2_X3:0 "Devestator Core 2"
+DREADNOUGHT_MID3_CYS1DL6:0 "Advanced Dreadnought Core 3"
+DREADNOUGHT_MID3_PD20:0 "Point Defense Core 3"
+DREADNOUGHT_MID3_X3:0 "Devestator Core 3"
+DREADNOUGHT_STERN_CYS1PD2:0 "Advanced Dreadnought Stern"
+DREADNOUGHT_STERN_X1:0 "Devestator Stern"
+DREADNOUGHT_STERN_H3:0 "Dreadnought Hangar Stern"
+
+TITAN_BOW_CYS1T2D:0 "Mixed Bow"
+TITAN_MID1_CYS14S0PD2:0 "Mixed Core"
+TITAN_STERN_CYS1PD4D:0 "Mixed Stern"
+
+FLAGSHIP_MID1_CYS1M8D:0 "Mixed Core 1"
+FLAGSHIP_MID2_CYS1M1D:0 "Mixed Core 2"
+FLAGSHIP_MID3_CYS1M8D:0 "Mixed Core 3"
+FLAGSHIP_MID4_CYS1PD5:0 "Mixed Core 4"
+FLAGSHIP_STERN_CYS1PD8D:0 "Mixed Stern"
+
+
+

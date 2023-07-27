@@ -1,0 +1,20 @@
+﻿l_english:
+
+# inits
+spacehabitat_origin_init_NAME:0 "Interstellar Escapees"
+spacehabitat_origin_init_DESC:0 "An interstellar habitat, used by Interstellar Escapees, to escape. Whodvethunk?"
+
+testmod_o_star_NAME:0 "Light of Eternity"
+testmod_o_star_DESC:0 "A gigantic class O star, used by Light of Eternity origin. LAMP!"
+
+pd_origin_init_crystal_mod_NAME:0 "Ilumia"
+pd_origin_init_crystal_mod_DESC:0 "Ilumia, a crystal world within a nebula. Used by Ilumia's Light."
+
+void_touched_init_NAME:0 "Void touched"
+void_touched_init_DESC:0 "A shadow world, hanging around a black hole. Used by Void Touched."
+
+atlantis_init_NAME:0 "Atlantis"
+atlantis_init_DESC:0 "An ocean planet, with a wet moon. Used by Atlantis."
+
+rock_n_stone_init_NAME:0 "Deep Rock Galactic"
+rock_n_stone_init_DESC:0 "Scanner just lit up like a christmas tree! We've got a swarm! Used by Rock n Stone. Leave no dwarf behind!"

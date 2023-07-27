@@ -1,0 +1,75 @@
+spriteTypes = {
+
+	#####################
+	### AI BEHAVIOURS ###
+	#####################
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_stationary_150"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_stationary_150.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_stationary_300"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_stationary_300.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_stationary_250"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_stationary_250.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_flank_120"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_flank_120.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_flank_150"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_flank_150.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_flank_200"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_flank_200.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_flank_250"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_flank_250.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_flank_300"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_flank_300.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_hitnrun_120"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_hitnrun_120.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_hitnrun_150"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_hitnrun_150.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_hitnrun_200"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_hitnrun_200.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_hitnrun_250"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_hitnrun_250.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_ai_behaviour_hitnrun_300"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ai_behaviour_hitnrun_300.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_null_void_weapon2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_null_void_weapon2.dds"
+	}
+}

@@ -1,0 +1,44 @@
+﻿l_english:
+
+kinetic_focus_name:0 "Kinetic Focus"
+kinetic_focus:0 "Kinetic Focus"
+kinetic_focus_desc:0 "Tried and true from the first firearms, kinetic weaponry is capable and proven, and can take down even the strongest of shields."
+
+energy_focus_name:0 "Energy Focus"
+energy_focus:0 "Energy Focus"
+energy_focus_desc:0 "New age weaponry, Laser and energy weapons do not require ammunition, only power, and can cut through armour."
+
+psionic_focus_name:0 "Psionic Focus"
+psionic_focus:0 "Psionic Focus"
+psionic_focus_desc:0 "When we have our minds and our wills, no physical object can hold our weaponry back."
+
+nanite_focus_name:0 "Nanite Focus"
+nanite_focus:0 "Nanite Focus"
+nanite_focus_desc:0 "The minute circuits of nanite can cut through even the strongest of hulls."
+
+bio_focus_name:0 "Biological Focus"
+bio_focus:0 "Biological Focus"
+bio_focus_desc:0 "Our ships have become as alive as we are. We trust in them to bring us to victory."
+
+hull_focus_name:0 "Hull Focus"
+hull_focus:0 "Hull Focus"
+hull_focus_desc:0 "Despite our best efforts, an enemy will inevitably cut through our defenses. We cannot stop this, but we can save lives, and maybe the entire ship."
+
+edict_focusing_zro_supplements_name:0 "Focusing Supplements1"
+edict_focusing_zro_supplements:0 "Focusing Supplements"
+edict_focusing_zro_supplements_desc:0 "We can provide supplementary medication which boosts our crew's psionic abilities, providing more weapon damage.."
+
+edict_nanite_injections_name:0 "Nanite Injection1"
+edict_nanite_injections:0 "Nanite Injection"
+edict_nanite_injections_desc:0 "Our nanite weapons can be made more effective by providing an excess of nanites, allowing weapons to work above capacity at the cost of increased nanite upkeep."
+
+edict_extended_ship_nutrition_name:0 "Warship Nutritional Boost"
+edict_extended_ship_nutrition:0 "Warship Nutritional Boost"
+edict_extended_ship_nutrition_desc:0 "Our living weaponry can be improved by feeding them more. Whod've known?"
+
+policy_show_planet_size:0 "Show Planet Sizes"
+policy_show_planet_size_desc:0 "Toggles showing planet sizes on un-terraformable bodies."
+planet_size_visible:0 "Planet Sizes: Visible"
+planet_size_visible_desc:0 "Shows the size of planets on their view screen, even when it is not possible to terraform them."
+planet_size_invisible:0 "Planet Sizes: Hidden"
+planet_size_invisible_desc:0 "Hides the impossible terraform options, preventing planet sizes from being shown."

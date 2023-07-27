@@ -1,0 +1,47 @@
+﻿l_english:
+
+
+##################################################################################################################################################################################################################
+### ADVANCED BEHAVIORS ###
+##########################
+
+ai_behaviour_stationary_150:0 "Artillery Tactic (Range: 150)"
+ai_behaviour_stationary_150_DESC:0 "Ships will move up to the shown distance (150) and then hold position while firing at the enemy."
+ai_behaviour_stationary_300:0 "Artillery Tactic (Range: 300)"
+ai_behaviour_stationary_300_DESC:0 "Ships will move up to the shown distance (300) and then hold position while firing at the enemy."
+ai_behaviour_stationary_250:0 "Artillery Tactic (Range: 250)"
+ai_behaviour_stationary_250_DESC:0 "Ships will move up to the shown distance (250) and then hold position while firing at the enemy."
+
+ai_behaviour_flank_120:0 "Flanking Tactic (120)"
+ai_behaviour_flank_120_DESC:0 "Ships will circle the enemy fleet at a set distance (120) while firing their weapons."
+ai_behaviour_flank_150:0 "Flanking Tactic (150)"
+ai_behaviour_flank_150_DESC:0 "Ships will circle the enemy fleet at a set distance (150) while firing their weapons."
+ai_behaviour_flank_200:0 "Flanking Tactic (200)"
+ai_behaviour_flank_200_DESC:0 "Ships will circle the enemy fleet at a set distance (200) while firing their weapons."
+ai_behaviour_flank_250:0 "Flanking Tactic (250)"
+ai_behaviour_flank_250_DESC:0 "Ships will circle the enemy fleet at a set distance (250) while firing their weapons."
+ai_behaviour_flank_300:0 "Flanking Tactic (300)"
+ai_behaviour_flank_300_DESC:0 "Ships will circle the enemy fleet at a set distance (300) while firing their weapons."
+
+ai_behaviour_hitnrun_120:0 "Hit and Run Tactic (120)"
+ai_behaviour_hitnrun_120_DESC:0 "Ships will move up to the shown distance (120) and then fall back before their next attack run."
+ai_behaviour_hitnrun_150:0 "Hit and Run Tactic (150)"
+ai_behaviour_hitnrun_150_DESC:0 "Ships will move up to the shown distance (150) and then fall back before their next attack run."
+ai_behaviour_hitnrun_200:0 "Hit and Run Tactic (200)"
+ai_behaviour_hitnrun_200_DESC:0 "Ships will move up to the shown distance (200) and then fall back before their next attack run."
+ai_behaviour_hitnrun_250:0 "Hit and Run Tactic (250)"
+ai_behaviour_hitnrun_250_DESC:0 "Ships will move up to the shown distance (250) and then fall back before their next attack run."
+ai_behaviour_hitnrun_300:0 "Hit and Run Tactic (300)"
+ai_behaviour_hitnrun_300_DESC:0 "Ships will move up to the shown distance (300) and then fall back before their next attack run."
+
+null_void_beam2:0 "Improved Null Void Beam"
+null_void_beam2_desc:0 "By incorporating Dark Matter, this improved Null Void Beam can cut through shields with incredible ease."
+
+NULL_VOID2:0 "Improved Null Void Beam"
+NULL_VOID2_DESC:0 "This improved Null-Void beam's energy destroying powers have been significantly improved with Dark Matter."
+SMALL_NV2_WEAPON:0 "$esc_small$ $NULL_VOID2$"
+SMALL_NV2_WEAPON_DESC:0 "$NULL_VOID2_DESC$"
+MEDIUM_NV2_WEAPON:0 "$esc_medium$ $NULL_VOID2$"
+MEDIUM_NV2_WEAPON_DESC:0 "$NULL_VOID2_DESC$"
+LARGE_NV2_WEAPON:0 "$esc_large$ $NULL_VOID2$"
+LARGE_NV2_WEAPON_DESC:0 "$NULL_VOID2_DESC$"

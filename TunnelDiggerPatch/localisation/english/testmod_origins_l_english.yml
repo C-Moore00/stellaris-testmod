@@ -1,0 +1,51 @@
+﻿l_english:
+
+origin_crystal_world_mod:0 "Ilumia's Light"
+origin_crystal_world_mod_desc:0 "This civilization, through unknown means, evolved (or were gifted?) magical powers. However, as their lives lengethened and their civilization advanced, these once boons proved a challenge for their population, as their birth rates plummeted. The Acean pillars among their homeworld keep them sustained among their home, but growing offworld will prove slow and arduous."
+origin_tooltip_crystal_world_effects_mod:0 "- Homeworld is a §Y$pc_crystal$§! (Size: £planetsize£ §Y20§!) with several §YRare Planetary Features.§!\n- Start with §Y$trait_pc_crystal_preference$§! and §Y$trait_fairy_magic$§! traits, granting §Gimmortality§! and §G+20%§! resources from £job£ jobs but costing §R-50%§! Pop growth speed.\n- Has access to several unique technologies."
+
+origin_interstellar_habitat:0 "Interstellar Escapees"
+origin_interstellar_habitat_desc:0 "This civilization narrowly escaped their own star's supernova, fleeing onto a massive interstellar habitat and into deep space, safely away from its destructive end. Their home system resides nearby, but little remains of the world they once called home."
+origin_tooltip_interstellar_habitat_effects:0 "- Homeworld is an §Y$pc_interstellar_habitat$§! (Size: £planetsize£ §Y15§!)\n- Start with Habitat Preference and §Y$trait_void_dweller_1$§! traits.\n- Start with Hydroponics and Habitats already researched. \n- §RThere will be no systems with guaranteed habitable worlds nearby.§!"
+
+origin_light_of_eternity:0 "Light of Eternity"
+origin_light_of_eternity_desc:0 "This civilization evolved around a gargantuan class-O star, their world shielded from its scorching heat by its incredibly dense atmosphere. Despite this, the beautiful view of the star from the clear skies of their homeworld resulted in the star's worship early in the civilization's history."
+origin_tooltip_light_of_eternity_effects:0 "- Start around a behemoth Class-O star.\n- Homeworld is (Size: £planetsize£ §Y23 - 30§!), with garunteed modifiers of §Y$gpm_dense_atmospheres$§! and §Y$gpm_clear_skies$§!."
+civic_tooltip_spiritualist:0 "Is some degree of §YSpiritualist§!"
+
+origin_void_touched:0 "Void Touched"
+origin_void_touched_desc:0 "This civilization's homeworld hid a portal to a void dimension. Through careful study, they have understood how to utilize its destructive power as a weapon, both by their ships and soldiers alike. As a result of their proximity to the anomaly, they have become reclusive from light."
+origin_tooltip_void_touched_effects:0 "- Homeworld is a §Y$pc_mzilli_shadow$§! (Size: £planetsize£ §Y18 - 23§!) orbitting a black hole.\n- Start with §Y$trait_pc_mzilli_shadow_preference$§! and §Y$trait_td_shadow_creatures$§! traits.\n- Start with §YDark Matter Drawing§! and §YNull Void Beam§! researched."
+
+origin_atlantis:0 "Atlantis"
+origin_atlantis_desc:0 "This civilization recently awoke amongst the remnants of an ancient city. Their lost glory days may yet come again..."
+origin_tooltip_atlantis_effects:0 "- Homeworld is a §Y$pc_ocean$§! (Size: £planetsize£ §Y20§!) with modifiers §BPrecusor Floating City§! and §BPrecursor Shield Array§!.\n- Get a garunteed habitable §Y$pc_ocean$§! moon (Size: £planetsize£ §Y13§!) orbiting your homeworld, with §BPrecursor Mines§!.\n- Start within a nebula."
+
+origin_rock_n_stone:0 "Rock and Stone"
+origin_rock_n_stone_desc:0 "Hoxxes IV was written off by all other mining companies. Only Deep Rock Galactic was willing to delve the depths, and they've reaped the rewards."
+origin_tooltip_rock_n_stone_effects:0 "- Homeworld is a §Y$pc_habitat$§! (Size: £planetsize£ §Y15§!) with several mining deposits and a Mineral Purification Plant, orbitting a broken world with many more modifiers.\n- Start with §YHabitat§!, §YPowered Exoskeletons§!, §YZero-G Refineries§!, §YSubterranean Geology§! and §YHydroponics§! researched.\n- Get research options for §YAdvanced Habitat§!, §YPlanetary Mineral Extraction§!, §YHyperscale Stellar Lifting§! and §YCore Crystal Harvesting§!."
+
+origin_craftworld_dwellers:0 "Craftworld Dwellers"
+origin_craftworld_dwellers_desc:0 "This species previously ruled a star-spanning empire. Their power and ability were matched only by their hubris. Their decadence eventually caused the total collapse of their empire. Now their shattered remnants roam the stars, praying for their time to come again, but knowing that it never will."
+origin_tooltip_craftworld_dwellers_effects:0 "- Start on an §Y$pc_interstellar_habitat$§! (Size: £planetsize£ §Y15§!).\n- Start with traits §Y$trait_fairy_magic$§!, §Y$trait_td_last_children$§!, §Y$trait_gpm_forgotten_species$§! and §Y$trait_psionic$§!.\n- Start with a clone vat on your homeworld, §YHealing Flowers§! technology, and two extra gene points.\n§RWarning: Extremely challenging origin. You will have to suffer -250% pop growth speed, which is nigh impossible to counter through traditional means.§!"
+
+origin_galactic_switchboard:0 "Galactic Switchboard"
+origin_galactic_switchboard_desc:0 "This species' ancestors once maintained a galactic network of communication infrastructure. While it survives to this day, access to anything beyond their home system has long been lost. However, The broken remains of one of the important nodes hangs in orbit above their homeworld. If it could be repaired, it could serve as a prying eye into the affairs of the galaxy."
+origin_tooltip_galactic_switchboard_effects:0 "- Homeworld starts with a §BPrecursor Communication Hub§!, and a ruined sentry array in orbit. \n- Start with §YDeep Space Signal Boosters§! researched."
+
+origin_defensive_doctrine:0 "Defensive Doctrine"
+origin_defensive_doctrine_desc:0 "This species suffered a xeno invasion shortly after the beginning of the atomic age. Through incredible sacrifice, their species miraculously defeated the invasion. The damage suffered in their war for survival scarred both their world and memories forever. Never again will they fall prey to the xenos."
+origin_tooltip_defensive_doctrine_effects:0 "- Homeworld starts with a §BPrecursor Eternal Bunker§! and a §YMaginot Command Bunker§!. \n- Start with §YAsteroid Artillery§! and many ground army-related technologies."
+
+origin_arachnids:0 "Arachnid Infestation"
+origin_arachnids_desc:0 "This civilization is a race of sentient arachnids. Many in the galaxy have an inate fear of them, but they won't eat you... probably."
+origin_tooltip_arachnids_effects:0 "- Homeworld starts with §YArachnophobia§! and a §YTitanic Cave§! on their homeworld, granting additional districts.\n- Start with the §Ytrait_arachnid§! trait, granting minor bonuses.\n- Starts with §YPack Behaviour Studies§! and §YArachnid DNA§! technologies, increasing society from researchers and allowing the creation of arachnid armies."
+
+origin_shroomy:0 "Shroomy"
+origin_shroomy_desc:0 "This civilization evolved out of the fungi which inhabitted their home. Their ancestry has given a unique genetic structure, granting a slight bonus."
+origin_tooltip_shroomy_effects:0 "- Homeworld is a Mycelium World with §YMushroom Forests§! and §YGiant Fungi§!.\n- Start with §Y$trait_mushroomgenes$§!, granting minor bonuses.\n- Start with several mushroom-based technologies."
+
+origin_ancestral_knowledge:0 "Ancestral Knowledge"
+origin_ancestral_knowledge_desc:0 "This species can transfer memories through physical contact. Their collective knowledge spans as far back as the start of their civilization, many millenia ago."
+origin_tooltip_ancestral_knowledge_effects:0 "- Start with §YThe Old Growth§! deposit on homeworld, occasionaly granting a recruited leader an additional trait.\n- Starting species gets §Y$trait_gpm_forgotten_species$§!, granting additional leader level and experience gain."
+

@@ -1,0 +1,53 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_origin_interstellar_habitat"
+		texturefile = "gfx/event_pictures/origins/origin_interstellar_habitat.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_origin_light_of_eternity"
+		texturefile = "gfx/event_pictures/origins/origin_light_of_eternity.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_atlantis"
+		texturefile = "gfx/event_pictures/origins/origin_atlantis.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_rock_n_stone"
+		texturefile = "gfx/event_pictures/origins/origin_rock_n_stone.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_craftworld_dwellers"
+		texturefile = "gfx/event_pictures/origins/origin_craftworld_dwellers.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_galactic_switchboard"
+		texturefile = "gfx/event_pictures/origins/origin_galactic_switchboard.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_defensive_doctrine"
+		texturefile = "gfx/event_pictures/origins/origin_defensive_doctrine.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_arachnids"
+		texturefile = "gfx/event_pictures/origins/origin_arachnids.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_shroomy"
+		texturefile = "gfx/event_pictures/origins/origin_shroomy.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_ancestral_knowledge"
+		texturefile = "gfx/event_pictures/origins/origin_ancestral_knowledge.dds"
+		alwaystransparent = yes
+	}
+}

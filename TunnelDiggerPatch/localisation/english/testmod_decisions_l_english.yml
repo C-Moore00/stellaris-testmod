@@ -1,0 +1,62 @@
+﻿l_english:
+
+# Decisions
+decision_remove_nonhabitable_modifiers:0 "Planetary Modification Clearance"
+decision_remove_nonhabitable_modifiers_desc:0 "Since terraforming this planet from scratch, certain features have carried over from its previous state. We will use a very large Super Powerful Omega Nucleic Generic Expunger (SPONGE) to clean the planet of old, non-affecting modifiers."
+
+decision_fix_ignited_world:0 "Fix Capital Building"
+decision_fix_ignited_world_desc:0 "Fixes a capital building that has been terraformed from a planetary habitat using spooky magic."
+
+decision_biolumen_candidate:0 "Introduce Bioluminescent Genetics"
+decision_biolumen_candidate_desc:0 "We will utilize genetic engineering to enlarge certain strands which produce bioluminesence within creatures, making the world suitable for Bioluminescent Terraforming. (Tropical -> Bioluminescent)"
+
+decision_storm_candidate:0 "Induce Global Storm Patterns"
+decision_storm_candidate_desc:0 "Utilizing powerful heaters and coolers, we will artificially induce a raging windstorm, making the world suitable for Storm Terraforming. (Glacial -> Storm)"
+
+decision_glacio_candidate:0 "Initiate Tectonic Activity"
+decision_glacio_candidate_desc:0 "By using really big magnets, we will create magma flows, increasing tectonic activity enough to allow us to terraform this world into a Glaciovolcanic World. (Glacial -> Glaciovolcanic)"
+
+decision_lichen_candidate:0 "Buy Garden Lichens"
+decision_lichen_candidate_desc:0 "The local plant shop seems to carry a wide variety of lichens and mycelia. We can spend a ton of money to buy them all, allowing us to plant them here, which in turn allows us to begin terraforming this world into a Lichen world. (Tundra -> Lichen)"
+
+decision_megaflora_candidate:0 "Encourage Arboreal Growth"
+decision_megaflora_candidate_desc:0 "By spraying certain chemicals, certain arboreal species begin a process of extremely rapid growth, provided they have the material. We can use this to forge massive trees among the landscape. (Forest -> Megaflora)"
+
+decision_reef_candidate:0 "Extreme Polyp Procreation"
+decision_reef_candidate_desc:0 "By introducing various substances into the water of this world, we can encourage tremendous growth of reef coral. This grants us space to build and live on this world. (Ocean -> Reef)"
+
+decision_aquifer_candidate:0 "Aquifer Exposure"
+decision_aquifer_candidate_desc:0 "An abandonded terraforming station. It was to turn the world green, free the water locked beneath the sands. Then the spice was discovered. Suddenly, nobody wanted the desert to go away anymore. (Dune -> Aquifer)"
+
+decision_coral_candidate:0 "Oceanic Removal"
+decision_coral_candidate_desc:0 "By draining massive amounts of water from the world, we can allow the study of exposed coral structures safely, albeit dying ones. (Ocean -> Coral)"
+
+decision_supercon_candidate:0 "Pangea Project"
+decision_supercon_candidate_desc:0 "Through incredible effort, we can move the plates of this world to create a massive supercontinent. I am sure this would not cause catastrophic damage to the environment. No, we are not peer reviewed, why do you ask? (Savannah -> Supercontinental)"
+
+decision_eyeball_candidate:0 "Slow Planetary Rotation"
+decision_eyeball_candidate_desc:0 "By attaching a series of massive thrusters around the equator of this world, we can slow its rotation and cause untold ecological destruction of the surface. (Glacial -> Eyeball)"
+
+decision_tidallocked_candidate:0 "Slow Plantetary Rotation"
+decision_tidallocked_candidate_desc:0 "By attaching a series of massive thrusters around the equator of this world, we can stop its rotation and cause it to become tidally locked. (Continental -> Tidally Locked)"
+
+decision_lanthanide_candidate:0 "Rare Earth Additions"
+decision_lanthanide_candidate_desc:0 "This world can be made suitable for exploitation of rare earth metals by adding a whole bunch of them. Who knows where the rest came from? You don't. (Alpine -> Lanthanide)"
+
+decision_karst_candidate:0 "Subterranean Exploration"
+decision_karst_candidate_desc:0 "We dig massive artificial caverns then make the surface unihabitable. Why, you ask? We don't ask why here, just why not! (Continental -> Karst)"
+
+decision_superhabitable_candidate:0 "Idylic Cradle"
+decision_superhabitable_candidate_desc:0 "We can make this world a luxuriantly comfortable world for life, with a stable temperature and pleasant weather. We don't know how, we just do it. (Continental -> Superhabitable)"
+
+decision_salt_candidate:0 "Host ESports Tournament"
+decision_salt_candidate_desc:0 "By hosting a ESports tournament and using no anti-cheat, we can cause such an extreme quantity of salt, so that the planet itself changes. (Desert -> Salt)"
+
+decision_primal_candidate:0 "Project Genesis"
+decision_primal_candidate_desc:0 "We can simulate early planetary formation artificially, granting excellent boons to research. (Ash -> Primal)"
+
+decision_aquatic_candidate:0 "Flood World"
+decision_aquatic_candidate_desc:0 "We could dump a massive quantity of water onto this world, such that the entire surface is covered, not just most of it. (Ocean -> Aquatic)"
+
+decision_geothermal_candidate:0 "Initiate Tectonic Activity"
+decision_geothermal_candidate_desc:0 "By using really big magnets, we will create magma flows, increasing tectonic activity enough to allow us to terraform this world into a Glaciovolcanic World. (Glacial -> Geothermal)"
