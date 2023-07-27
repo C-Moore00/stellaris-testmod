@@ -1,0 +1,175 @@
+##########################
+# AI SHIP BEHAVIOURS EXT #
+##########################
+
+### STATIONARY ###
+ship_behavior = {
+	name = "ai_behaviour_stationary_150"
+	desc = "ai_behaviour_stationary_150_DESC"
+	
+	preferred_attack_range = 150
+	formation_distance = 155
+	return_to_formation_distance = 170
+	collision_awareness = 0.35
+
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_stationary_250"
+	desc = "ai_behaviour_stationary_250_DESC"
+	
+	preferred_attack_range = 250
+	formation_distance = 255
+	return_to_formation_distance = 270
+	collision_awareness = 0.35
+
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_stationary_300"
+	desc = "ai_behaviour_stationary_300_DESC"
+	
+	preferred_attack_range = 300
+	formation_distance = 305
+	return_to_formation_distance = 320
+	collision_awareness = 0.35
+
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+}
+
+### FLANK ###
+ship_behavior = {
+	name = "ai_behaviour_flank_120"
+	desc = "ai_behaviour_flank_120_DESC"
+	
+	preferred_attack_range = 120
+	formation_distance = 120
+	return_to_formation_distance = 10
+	collision_awareness = 0.75
+
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+}
+
+ship_behavior = {
+	name = "ai_behaviour_flank_150"
+	desc = "ai_behaviour_flank_150_DESC"
+	
+	preferred_attack_range = 150
+	formation_distance = 150
+	return_to_formation_distance = 10
+	collision_awareness = 0.75
+
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+}
+
+ship_behavior = {
+	name = "ai_behaviour_flank_200"
+	desc = "ai_behaviour_flank_200_DESC"
+	
+	preferred_attack_range = 200
+	formation_distance = 200
+	return_to_formation_distance = 10
+	collision_awareness = 0.75
+
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+}
+
+ship_behavior = {
+	name = "ai_behaviour_flank_250"
+	desc = "ai_behaviour_flank_250_DESC"
+	
+	preferred_attack_range = 250
+	formation_distance = 250
+	return_to_formation_distance = 10
+	collision_awareness = 0.75
+
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+}
+
+ship_behavior = {
+	name = "ai_behaviour_flank_300"
+	desc = "ai_behaviour_flank_300_DESC"
+	
+	preferred_attack_range = 300
+	formation_distance = 300
+	return_to_formation_distance = 10
+	collision_awareness = 0.75
+
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+}
+
+### HIT AND RUN ###
+ship_behavior = {
+	name = "ai_behaviour_hitnrun_120"
+	desc = "ai_behaviour_hitnrun_120_DESC"
+	
+	preferred_attack_range = 120
+	formation_distance = 110
+	return_to_formation_distance = 130
+	collision_awareness = 0.5
+
+	attack_move_pattern = flee
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_hitnrun_150"
+	desc = "ai_behaviour_hitnrun_150_DESC"
+	
+	preferred_attack_range = 150
+	formation_distance = 140
+	return_to_formation_distance = 160
+	collision_awareness = 0.5
+
+	attack_move_pattern = flee
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_hitnrun_200"
+	desc = "ai_behaviour_hitnrun_200_DESC"
+	
+	preferred_attack_range = 200
+	formation_distance = 190
+	return_to_formation_distance = 200
+	collision_awareness = 0.5
+
+	attack_move_pattern = flee
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_hitnrun_250"
+	desc = "ai_behaviour_hitnrun_250_DESC"
+	
+	preferred_attack_range = 250
+	formation_distance = 240
+	return_to_formation_distance = 260
+	collision_awareness = 0.5
+
+	attack_move_pattern = flee
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "ai_behaviour_hitnrun_300"
+	desc = "ai_behaviour_hitnrun_300_DESC"
+	
+	preferred_attack_range = 300
+	formation_distance = 290
+	return_to_formation_distance = 310
+	collision_awareness = 0.5
+
+	attack_move_pattern = flee
+	passive_move_pattern = charge
+}

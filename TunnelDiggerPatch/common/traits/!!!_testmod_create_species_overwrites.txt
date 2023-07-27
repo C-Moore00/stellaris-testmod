@@ -1,0 +1,1465 @@
+#this file allows many modded traits that cannot be added / removed to do so with the requisite ascension perk(s) and/or trait acquired through an event
+
+#####################################################################################################
+####################################### BASEGAME & EXPANSIONS #######################################
+#####################################################################################################
+
+trait_harvested_radiotrophic = {
+	icon = "gfx/interface/icons/traits/trait_plantoid_radiotrophic.dds"
+	host_has_dlc = "Plantoids Species Pack"
+	initial = no
+	randomized = no
+	cost = 2
+	potential_crossbreeding_chance = 1.0
+	opposites = { "trait_plantoid_phototrophic" "trait_plantoid_radiotrophic" }
+	allowed_archetypes = { BIOLOGICAL }
+	species_class = { HUM MAM REP AVI ART MOL NECROID AQUATIC }
+
+	species_potential_add = {
+		exists = from
+		from = {
+            OR = {
+                from = { has_ascension_perk = ap_esap_bio_bonus }
+                has_country_flag = harvested_radiotrophic_dna
+            }
+		}
+	}
+
+	custom_tooltip = TRAIT_PLANTOID_RADIOTROPHIC_EFFECT
+	modifier = {
+		pc_nuked_habitability = 0.1
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = planet
+			planet = { is_planet_class = pc_nuked }
+		}
+		pop_growth_speed = 0.10
+	}
+	slave_cost = {
+		energy = 150
+	}
+}
+
+trait_zombie = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	opposites = { "trait_nerve_stapled" }
+	initial = no
+	randomized = no
+	advanced_trait = no
+	forced_happiness = yes
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_merge_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	infertile = yes
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	modifier = {
+		planet_jobs_produces_mult = -0.25
+		planet_pops_upkeep_mult = -1
+	}
+	icon = "gfx/interface/icons/traits/trait_zombie.dds"
+	custom_tooltip = TRAIT_ZOMBIE_EFFECT
+	slave_cost = {
+		energy = 150
+	}
+}
+
+trait_brainslug = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/leader_traits/trait_brainslugged.dds"
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+			AND = {
+                any_owned_pop = { has_trait = trait_brainslug }
+			    has_ascension_perk = ap_esap_bio_bonus
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.10
+		planet_jobs_society_research_produces_mult = 0.10
+		planet_jobs_unity_produces_mult = 0.10
+		pop_growth_speed = -0.25
+	}
+}
+
+trait_nivlac = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_resilient.dds"
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_potential_add = {
+		exists = from
+		from = {
+			AND = {
+                any_owned_pop = { has_trait = trait_nivlac }
+			    has_ascension_perk = ap_esap_bio_bonus
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	potential_crossbreeding_chance = 1.0
+
+	allowed_archetypes = { BIOLOGICAL }
+
+	modifier = {
+		pop_environment_tolerance = 0.50
+		pop_growth_speed = 0.15
+	}
+	slave_cost = {
+		energy = 100
+	}
+}
+
+#####################################################################################################
+################################################ GPM ################################################
+#####################################################################################################
+
+trait_gpm_forgotten_species = {
+	cost = 0
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                any_owned_pop = { has_trait = trait_gpm_forgotten_species }
+			    has_ascension_perk = ap_esap_bio_bonus
+            }
+			
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	allowed_archetypes = { BIOLOGICAL ROBOT MACHINE PRESAPIENT LITHOID }
+	modifier = {
+		species_leader_exp_gain = 0.5
+		pop_amenities_usage_mult = 0.25
+	}
+	#custom_tooltip = TRAIT_GPM_FORGOTTEN_SPECIES_EFFECT
+}
+
+trait_gpm_mega_adaptive = {
+	cost = 0
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                any_owned_pop = { has_trait = trait_gpm_mega_adaptive }
+			    has_ascension_perk = ap_esap_bio_bonus
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	opposites = { "trait_nonadaptive" "trait_adaptive" "trait_extremely_adaptive" }
+	allowed_archetypes = { BIOLOGICAL ROBOT MACHINE PRESAPIENT LITHOID }
+	modifier = {
+		pop_environment_tolerance = 0.10
+		planet_jobs_minerals_produces_mult = 0.20
+		planet_jobs_food_produces_mult = 0.20
+	}
+	#custom_tooltip = TRAIT_GPM_MEGA_ADAPTIVE_EFFECT
+}
+
+trait_gpm_high_status = {
+	cost = 0
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                any_owned_pop = { has_trait = trait_gpm_high_status }
+			    has_ascension_perk = ap_esap_bio_bonus
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.15
+	}
+	allowed_archetypes = { BIOLOGICAL ROBOT MACHINE PRESAPIENT LITHOID }
+	custom_tooltip = TRAIT_GPM_HIGH_STATUS_EFFECT
+}
+
+trait_gpm_enigmatic_update = { 
+	cost = -1	
+	species_potential_add = {
+		exists = from
+		from = {
+            any_owned_pop = { has_trait = trait_gpm_enigmatic_update }
+		}
+	}
+	species_possible_remove = { always = yes }
+	initial = no
+	randomized = no
+
+	allowed_archetypes = { ROBOT MACHINE }
+
+	modifier = {
+		planet_jobs_produces_mult = 0.02
+		planet_pop_assembly_mult = 0.02
+		pop_housing_usage_mult = -0.02
+		pop_amenities_usage_mult = -0.02
+		army_health = 0.02
+		army_damage_mult = 0.02
+		species_leader_exp_gain = 0.02
+		leader_skill_levels = 1
+		species_empire_size_mult = -0.02
+		planet_pops_robotics_upkeep_mult = -0.02
+	}
+}
+
+#####################################################################################################
+########################################### PRE-SAPIENTS ############################################
+#####################################################################################################
+
+trait_presapient_starborn = {
+	cost = 1
+	opposites = { "trait_presapient_earthbound" "trait_sedentary" }
+	initial = no
+	#sapient = no
+    species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		pop_growth_from_immigration = 0.25
+		pop_resettlement_cost_mult = -0.25
+		pop_environment_tolerance = 0.1
+	}
+}
+
+trait_presapient_earthbound = {
+	cost = 1
+	opposites = { "trait_presapient_starborn" "trait_nomadic" }
+	initial = no
+	#sapient = no
+    species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		planet_jobs_energy_produces_mult = 0.1
+		army_defense_damage_mult = 0.5
+	}
+}
+
+trait_presapient_natural_intellectuals = {
+	cost = 1
+	opposites = { "trait_presapient_proles" }
+	initial = no
+	#sapient = no
+    species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		planet_jobs_unity_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = -0.1
+	}
+}
+
+trait_presapient_proles = {
+	cost = 1
+	opposites = { "trait_presapient_natural_intellectuals" }
+	initial = no
+	#sapient = no
+    species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		army_damage_mult = 0.10
+		planet_jobs_minerals_produces_mult = 0.10
+		planet_jobs_food_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = -0.15
+		planet_jobs_engineering_research_produces_mult = -0.15
+		planet_jobs_society_research_produces_mult = -0.15
+	}
+}
+
+trait_presapient_conservative = {
+	cost = 1
+	initial = no
+	#sapient = no
+    species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		pop_happiness = 0.05
+		pop_government_ethic_attraction = 0.25
+		species_leader_exp_gain = -0.33
+	}
+}
+
+trait_presapient_irradiated = {
+	cost = 1
+	initial = no
+	#sapient = no
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		pc_nuked_habitability = 1
+		leader_age = 30
+	}
+}
+
+trait_presapient_docile_livestock = {
+	cost = 1
+	opposites = { "trait_intelligent" "trait_erudite" "trait_natural_engineers" "trait_natural_physicists" "trait_natural_sociologists" }
+	initial = no
+	#sapient = no
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	randomized = no
+	advanced_trait = yes
+	forced_happiness = yes
+	icon = "gfx/interface/icons/traits/trait_primitive.dds"
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	modifier = {
+		pop_growth_speed = 0.3
+		planet_jobs_unity_produces_mult = 0.1
+		planet_jobs_energy_produces_mult = -0.5
+		planet_jobs_physics_research_produces_mult = -0.75
+		planet_jobs_engineering_research_produces_mult = -0.75
+		planet_jobs_society_research_produces_mult = -0.75
+	}
+}
+
+#####################################################################################################
+########################################## TRAIT DIVERSITY ##########################################
+#####################################################################################################
+
+trait_td_multi_hiveminded = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_hive_mind"
+		"trait_td_futurespawns"
+		"trait_td_paradise_lost"
+		"trait_td_lith_paradise_lost"
+		"trait_td_last_children"
+		"trait_td_abominations"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	slave_cost = { energy = -200 }
+
+	forced_happiness = yes
+	modifier = {
+		planet_jobs_worker_produces_mult = 0.075
+		planet_jobs_unity_produces_mult = 0.125
+		leader_skill_levels = -1
+	}
+}
+
+trait_td_futurespawns = {
+	cost = 1
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_paradise_lost"
+		"trait_td_lith_paradise_lost"
+		"trait_td_last_children"
+		"trait_td_abominations"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+
+	modifier = {
+		pop_happiness = -0.15
+		planet_jobs_engineering_research_produces_mult = 0.125
+		planet_jobs_physics_research_produces_mult = 0.125
+		planet_jobs_society_research_produces_mult = 0.125
+	}
+}
+
+trait_td_paradise_lost = {
+	cost = -4
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_robust"
+		"trait_extremely_adaptive"
+		"trait_adaptive"
+		"trait_nonadaptive"
+		"trait_td_last_children"
+		"trait_td_abominations"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL }
+	slave_cost = { energy = -250 }
+
+	modifier = {
+		pop_environment_tolerance = -0.50
+		planet_jobs_unity_produces_mult = 0.15
+	}
+}
+
+trait_td_lith_paradise_lost = {
+	cost = -4
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+	icon = "gfx/interface/icons/traits/trait_td_paradise_lost.dds"
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_last_children"
+		"trait_td_abominations"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { LITHOID }
+	slave_cost = { energy = -250 }
+
+	modifier = {
+		pop_environment_tolerance = -0.75
+		planet_jobs_unity_produces_mult = 0.15
+	}
+}
+
+trait_td_last_children = {
+	cost = -8
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	randomized = no
+
+	opposites = {
+		"trait_fertile"
+		"trait_rapid_breeders"
+		"trait_slow_breeders"
+		"trait_td_abominations"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	slave_cost = { energy = -250 }
+
+	modifier = {
+		pop_growth_speed = -2.00
+	}
+}
+
+trait_td_abominations = {
+	cost = -3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_agrarian"
+		"trait_td_aura_absorption"
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL }
+	slave_cost = { energy = -100 }
+
+	modifier = {
+		planet_jobs_food_produces_mult = -0.30
+		army_damage_mult = 0.15
+		pc_nuked_habitability = 0.15
+	}
+}
+
+trait_td_aura_absorption = {
+	cost = 4
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_therianthropic"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL }
+
+	modifier = {
+		planet_pops_food_upkeep_mult = -2.00
+		planet_pops_consumer_goods_upkeep_mult = 0.60
+		pop_happiness = -0.075
+	}
+}
+
+trait_td_therianthropic = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_communal"
+		"trait_solitary"
+		"trait_td_vampiric"
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+	slave_cost = { energy = 150 }
+
+	modifier = {
+		pop_housing_usage_mult = 0.15
+		planet_jobs_worker_produces_mult = 0.05
+		army_damage_mult = 0.225
+		army_health = 0.225
+	}
+}
+
+trait_td_vampiric = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_eternal_youth"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+
+	modifier = {
+		pop_amenities_usage_mult = 0.15
+		leader_age = 15
+		army_damage_mult = 0.225
+		army_morale = 0.225
+	}
+}
+
+trait_td_parasite = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+	slave_cost = { energy = 50 }
+
+	modifier = {
+		leader_age = 15
+		pop_environment_tolerance = 0.10
+		army_morale = -0.15
+	}
+}
+
+trait_td_lith_parasite = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+	icon = "gfx/interface/icons/traits/trait_td_parasite.dds"
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { LITHOID }
+	slave_cost = { energy = 25 }
+
+	modifier = {
+		leader_age = 25
+		pop_environment_tolerance = 0.05
+		army_morale = -0.15
+	}
+}
+
+trait_td_virus = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+	slave_cost = { energy = 50 }
+
+	modifier = {
+		leader_age = 15
+		pop_growth_speed = 0.05
+		army_morale = -0.15
+	}
+}
+
+trait_td_lith_virus = {
+	cost = 3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+	icon = "gfx/interface/icons/traits/trait_td_virus.dds"
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { LITHOID }
+	slave_cost = { energy = 25 }
+
+	modifier = {
+		leader_age = 25
+		pop_growth_speed = 0.025
+		army_morale = -0.15
+	}
+}
+
+trait_td_swarm_that_walks = {
+	cost = 2
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+	slave_cost = { energy = -150 }
+
+	modifier = {
+		army_health = -0.30
+		planet_jobs_worker_produces_mult = -0.05
+		leader_age = 25
+	}
+}
+
+trait_td_energy_slimes = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT }
+	slave_cost = { energy = 100 }
+
+	modifier = {
+		army_health = -0.30
+		planet_jobs_energy_produces_mult = 0.15
+		planet_livestock_energy_produces_add = 0.5
+	}
+}
+
+trait_td_shadow_creatures = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	slave_cost = { energy = -50 }
+
+	modifier = {
+		pop_housing_usage_mult = -0.20
+		planet_jobs_energy_produces_mult = -0.175
+	}
+}
+
+trait_td_eternal_youth = {
+	cost = 5
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_robust"
+		"trait_venerable"
+		"trait_enduring"
+		"trait_fleeting"
+		"trait_td_parasite"
+		"trait_td_lith_parasite"
+		"trait_td_virus"
+		"trait_td_lith_virus"
+		"trait_td_swarm_that_walks"
+		"trait_td_energy_slimes"
+		"trait_td_shadow_creatures"
+		"trait_td_mirror_images"
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+
+	immortal_leaders = yes
+	modifier = {
+		species_leader_exp_gain = -0.60
+		army_damage_mult = -0.125
+		army_morale = -0.15
+	}
+}
+
+trait_td_mirror_images = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_ghosts"
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	slave_cost = { energy = -50 }
+
+	modifier = {
+		pop_housing_usage_mult = -0.20
+		planet_jobs_minerals_produces_mult = -0.175
+	}
+}
+
+trait_td_ghosts = {
+	cost = 2
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_shifting_souls"
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+
+	modifier = {
+		planet_jobs_society_research_produces_mult = 0.125
+		species_leader_exp_gain = 0.25
+	}
+}
+
+trait_td_shifting_souls = {
+	cost = -3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_artificial_spirits"
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+
+	modifier = {
+		planet_jobs_unity_produces_mult = -0.10
+		pop_amenities_usage_mult = 0.10
+		species_leader_exp_gain = -0.30
+	}
+}
+
+trait_td_artificial_spirits = {
+	cost = -3
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_exiles_of_the_end"
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	slave_cost = { energy = -200 }
+
+	modifier = {
+		pop_growth_speed = -0.20
+		planet_jobs_engineering_research_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.10
+	}
+}
+
+trait_td_exiles_of_the_end = {
+	cost = -2
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_td_semimechanized"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+
+	modifier = {
+		pop_happiness = -0.15
+		planet_jobs_unity_produces_mult = -0.175
+		planet_jobs_engineering_research_produces_mult = 0.10
+		planet_jobs_physics_research_produces_mult = 0.10
+		planet_jobs_society_research_produces_mult = 0.10
+		pc_nuked_habitability = 0.20
+	}
+}
+
+trait_td_semimechanized = {
+	cost = -1
+	potential_crossbreeding_chance = 0
+	sorting_priority = 9
+
+	species_potential_add = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+
+	opposites = {
+		"trait_hive_mind"
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = 0.30
+		pop_environment_tolerance = 0.075
+		leader_age = 10
+	}
+}
+
+#####################################################################################################
+########################################## EMPIRES EXPANDED #########################################
+#####################################################################################################
+
+trait_plague_ridden = {
+	icon = "gfx/interface/icons/traits/trait_plague_ridden.dds"
+	initial = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = trait_plague_ridden }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	sorting_priority = 15
+	potential_crossbreeding_chance = 0.25
+	modifier = {
+		pop_environment_tolerance = 0.10
+		leader_age = 15
+		pop_growth_speed = -0.10
+		pop_happiness = -0.10
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_strong_immune_system = {
+	cost = 2
+	icon = "gfx/interface/icons/traits/trait_strong_immune_system.dds"
+	initial = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = trait_strong_immune_system }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	sorting_priority = 15
+	potential_crossbreeding_chance = 0.05
+	modifier = {
+		pop_environment_tolerance = 0.10
+		leader_age = 10
+		pop_growth_speed = 0.05
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+trait_seeded = {
+	icon = "gfx/interface/icons/traits/trait_seeded.dds"
+	initial = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = trait_seeded }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	randomized = no
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	sorting_priority = 15
+	potential_crossbreeding_chance = 0
+	modifier = {
+		leader_age = 20
+		country_unity_produces_mult = 0.05
+		pop_growth_speed = -0.10
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#####################################################################################################
+######################################### PLANETARY DIVERSITY #######################################
+#####################################################################################################
+
+trait_pdshroudcomposer = {
+	cost = 0
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = trait_pdshroudcomposer }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		leader_age = 25
+		pop_amenities_usage_mult = 0.20
+		pop_government_ethic_attraction = -0.15
+	}
+}
+
+trait_mushroomgenes = {
+	cost = 0
+	initial = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = trait_mushroomgenes }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		army_damage_mult = 0.10
+		planet_jobs_worker_produces_mult = 0.05
+	}
+}
+
+#####################################################################################################
+##################################### GIGASTRUCTURAL ENGINEERING ####################################
+#####################################################################################################
+
+katzen_trait_martial = {
+	cost = 1
+	species_potential_add = {
+		exists = from
+		from = {
+            AND = {
+                has_ascension_perk = ap_esap_bio_bonus
+                any_owned_pop = { has_trait = katzen_trait_martial }
+            }
+		}
+	}
+	species_possible_remove = {
+		exists = from
+		from = { has_ascension_perk = ap_esap_bio_bonus }
+	}
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_military_pioneer.dds"
+	initial = no
+	randomized = no
+	modifier = {
+		pop_cat_slave_happiness = -0.5
+		species_empire_size_mult = -0.10
+		army_damage_mult = 0.15
+		army_health = 0.15
+		army_morale = 0.4
+	}
+}

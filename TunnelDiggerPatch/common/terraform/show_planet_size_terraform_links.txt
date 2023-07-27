@@ -1,0 +1,450 @@
+
+# molten
+terraform_link = {
+	from = "pc_molten"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# barren
+terraform_link = {
+	from = "pc_barren"
+	to = "pc_barren_cold"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# barren cold
+terraform_link = {
+	from = "pc_barren_cold"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# toxic
+terraform_link = {
+	from = "pc_toxic"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# frozen
+terraform_link = {
+	from = "pc_frozen"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# gas giant
+terraform_link = {
+	from = "pc_gas_giant"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# cold gas giant
+terraform_link = {
+	from = "pc_cold_gas_giant"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# hot gas giant
+terraform_link = {
+	from = "pc_hot_gas_giant"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# cloudless gas giant
+terraform_link = {
+	from = "pc_cloudless_gas_giant"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# metallic hydrogen
+terraform_link = {
+	from = "pc_metallic_hydrogen"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# strip mined
+terraform_link = {
+	from = "pc_strip_mined"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# core mined
+terraform_link = {
+	from = "pc_core_mined"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# red toxic
+terraform_link = {
+	from = "pc_red_toxic"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# carbon
+terraform_link = {
+	from = "pc_carbon"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# iron
+terraform_link = {
+	from = "pc_iron"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# subglacial
+terraform_link = {
+	from = "pc_subglacial"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# hydrocarbon
+terraform_link = {
+	from = "pc_hydrocarbon"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# hothouse
+terraform_link = {
+	from = "pc_hothouse"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# ethane ocean
+terraform_link = {
+	from = "pc_ethane_ocean"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# diamond
+terraform_link = {
+	from = "pc_diamond"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# volcanic
+terraform_link = {
+	from = "pc_volcanic"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# chthonian
+terraform_link = {
+	from = "pc_cchthonian"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# broken
+terraform_link = {
+	from = "pc_broken"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# shattered
+terraform_link = {
+	from = "pc_shattered"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# shattered
+terraform_link = {
+	from = "pc_shrouded"
+	to = "pc_barren"
+	
+	energy = 200000
+	duration = 7200
+	potential = { NOT = { has_policy_flag = no_show_planet_size } }
+	
+	condition = {
+		has_technology = "tech_show_planet_size_hidden"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

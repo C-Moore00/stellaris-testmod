@@ -1,0 +1,13 @@
+- add compat for all types of leader traits
+- swap academy trait upgrade to select which from list
+- create total creation AP for total control of worlds and perks
+- create ability for psi sensors to see through nebulae, and stations with listening posts
+- add event to add all ship types at start of game, because I strongly believe that would be an interesting experiment
+- expand orbital ring levels to be chonkier, and take more modules / buildings because NSC2 would do that
+- fix certain shipsets showing weapons and sections
+- stop machines from getting psi weapon techs and Psi techs in general
+
+
+completed
+- create merger of shipsets, fix Mass Effect Shipsets to be not trash
+- compat patch habitat hq buildings cause they need it THIS WAS UNECESSARY

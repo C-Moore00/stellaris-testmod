@@ -1,0 +1,247 @@
+#civic_example = {
+#	playable = {}								# AND trigger, no scope; use this to prevent the civic from being selectable by the player (UI)
+#	potential = {}								# requirements list, see ../readme_requirements.txt
+#	possible = {}								# requirements list, see ../readme_requirements.txt
+#	pickable_at_start = yes / no				# default: yes
+#	modification = yes / no						# default: yes, set to no to prevent adding or removing this after creation of the empire
+#
+#	random_weight = { base = 5 }				# scriptable weight for randomizing a civic; required, else the civic will not get assigned randomly
+#
+#	modifier = {}								# modifier added to the country if the civic is selected and valid
+#	can_build_ruler_ship = yes / no				# default: no
+#	traits = { trait = ... }					# default: empty; trait set to enforce on the primary species. They cannot be removed, but more can be added if points/picks permit
+#	has_secondary_species = {					# default: none; if present, will enable secondary species customization in empire designer and will create secondary species & pops at galaxy generation time (see empire_init_create_capital_secondary_pops)
+#		traits = { trait = ... }					# default: empty; trait set to enforce on the secondary species. They cannot be removed, but more can be added if points/picks permit
+#	}
+#}
+
+origin_crystal_world_mod = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_pdcrystal.dds"
+	picture = GFX_origin_pd_crystal
+	starting_colony = pc_crystal
+	habitability_preference = pc_crystal
+	preferred_planet_class_neighbor = no
+	description = "origin_tooltip_crystal_world_effects_mod"
+	random_weight = { base = 0 }
+	initializers = { pd_origin_init_crystal_mod }
+	traits = { trait = trait_fairy_magic }
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
+}
+
+origin_interstellar_habitat = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_interstellar_habitat.dds"
+	picture = GFX_origin_interstellar_habitat
+	description = "origin_tooltip_interstellar_habitat_effects"
+	traits = { trait = trait_void_dweller_1 }
+	starting_colony = pc_interstellar_habitat
+	habitability_preference = pc_habitat
+	preferred_planet_class_neighbor = no
+	initializers = { spacehabitat_origin_init }
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
+			}
+		}
+	}
+}
+
+origin_light_of_eternity = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_light_of_eternity.dds"
+	picture = GFX_origin_light_of_eternity
+	description = "origin_tooltip_light_of_eternity_effects"
+	initializers = { testmod_o_star }
+	possible = {
+		ethics = { 
+			NOT = { value = ethic_gestalt_consciousness } 
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		civics = {
+			OR = {
+				value = civic_bugged_luminosity_cult
+				value = civic_bugged_luminosity_cult_corpo
+			}
+			
+		}
+	}
+}
+
+origin_void_touched = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_void_touched.dds"
+	picture = GFX_evt_shrouded_planet
+	description = "origin_tooltip_void_touched_effects"
+	starting_colony = pc_mzilli_shadow
+	habitability_preference = pc_mzilli_shadow
+	preferred_planet_class_neighbor = no
+	initializers = { void_touched_init }
+	traits = { trait = trait_td_shadow_creatures }
+}
+
+origin_atlantis = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_atlantis.dds"
+	picture = GFX_origin_atlantis
+	description = "origin_tooltip_atlantis_effects"
+	starting_colony = pc_ocean
+	habitability_preference = pc_ocean
+	preferred_planet_class_neighbor = yes
+	initializers = { atlantis_init }
+}
+
+origin_rock_n_stone = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_rock_n_stone.dds"
+	picture = GFX_origin_rock_n_stone
+	description = "origin_tooltip_rock_n_stone_effects"
+	starting_colony = pc_habitat
+	preferred_planet_class_neighbor = no
+	initializers = { rock_n_stone_init }
+	possible = {
+		civics = {
+			OR ={
+				value = civic_bugged_exhaustive_mining_acts
+				value = civic_mining_guilds
+				value = civic_bugged_interplanetary_mining_corpo
+			}
+		}
+		ethics = { 
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+			OR = {
+				text = civic_tooltip_anthropocentric
+				value = ethic_anthropocentric
+				value = ethic_fanatic_anthropocentric
+			}
+		}
+	}
+}
+
+origin_craftworld_dwellers = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_craftworld_dwellers.dds"
+	picture = GFX_origin_craftworld_dwellers
+	description = "origin_tooltip_craftworld_dwellers_effects"
+	starting_colony = pc_interstellar_habitat
+	preferred_planet_class_neighbor = yes
+	initializers = { craftworld_dwellers_init }
+	traits = { 
+		trait = trait_td_last_children
+		trait = trait_psionic
+		trait = trait_fairy_magic
+		trait = trait_gpm_forgotten_species
+		}
+	possible = {
+		ethics = { 
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				text = civic_tooltip_spiritualist
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+		
+	}
+}
+
+origin_galactic_switchboard = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_galactic_switchboard.dds"
+	picture = GFX_origin_galactic_switchboard
+	description = "origin_tooltip_galactic_switchboard_effects"
+	preferred_planet_class_neighbor = yes
+	possible = {
+		ethics = { 
+			NOT = { value = ethic_gestalt_consciousness }
+		}
+	}
+}
+
+origin_defensive_doctrine = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_defensive_doctrine.dds"
+	picture = GFX_origin_defensive_doctrine
+	description = "origin_tooltip_defensive_doctrine_effects"
+	preferred_planet_class_neighbor = yes
+	possible = {
+		ethics = { 
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				value = ethic_fanatic_militarist
+			}
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+}
+
+origin_arachnids = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_arachnids.dds"
+	picture = GFX_origin_arachnids
+	description = "origin_tooltip_arachnids_effects"
+	preferred_planet_class_neighbor = yes
+	traits = { trait = trait_arachnid }
+	possible = {
+		species_archetype = {
+			value = ARTHROPOID
+		}
+	}
+}
+
+origin_shroomy = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_shroomy.dds"
+	picture = GFX_origin_shroomy
+	description = "origin_tooltip_shroomy_effects"
+	starting_colony = pc_mycelium
+	habitability_preference = pc_mycelium
+	preferred_planet_class_neighbor = yes
+	traits = { trait = trait_mushroomgenes }
+	possible = {
+		species_archetype = {
+			value = FUNGOID
+		}
+	}
+}
+
+origin_ancestral_knowledge = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_ancestral_knowledge.dds"
+	picture = GFX_origin_ancestral_knowledge
+	description = "origin_tooltip_ancestral_knowledge_effects"
+	preferred_planet_class_neighbor = yes
+	traits = { trait = trait_gpm_forgotten_species }
+	possible = {
+		authority = { NOT = { value = auth_machine_intelligence  } }
+		ethics = { value = ethic_gestalt_consciousness }
+		species_archetype = {
+			value = FUNGOID PLANTOID
+		}
+	}
+}

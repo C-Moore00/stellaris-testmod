@@ -1,0 +1,13 @@
+gpm_spawn_machine_world_science_modifier = {
+	locked_random_list = {
+		10 = {
+			add_modifier = { days = -1 modifier = gpm_living_knowledge_base }
+			modifier = { factor = 0 has_modifier = gpm_living_knowledge_base }
+			modifier = { factor = 0 exists = owner owner = { NOT = { has_civic = civic_machine_assimilator } } }
+		}
+		10 = {
+			add_modifier = { days = -1 modifier = gpm_planetary_databases }
+			modifier = { factor = 0 has_modifier = gpm_planetary_databases }
+		}
+	}
+}

@@ -1,0 +1,187 @@
+#Exhaustive Mining Acts
+civic_bugged_exhaustive_mining_acts = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	modifier = {
+		planet_miners_minerals_produces_add = 2
+		category_materials_research_speed_mult = 0.20
+		job_miner_per_pop = 0.066
+		district_mining_max = +1
+		pop_environment_tolerance = -0.1
+	}
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_fanatic_anthropocentric
+			}
+		}
+		civics = {
+			NOT = {
+				value = civic_mining_guilds
+			}
+		}
+	}
+}
+
+
+civic_uncivil_defence_contractor = {
+description = "civic_tooltip_uncivil_defence_contractor"
+	potential = {
+	
+	OR = {
+			authority = { OR = { value = auth_bugged_corporate_democratic value = auth_corporate value = auth_bugged_corporate_imperial } }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	
+	possible = {
+	ethics = {
+		OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		NOT = {
+				value = ethic_fanatic_xenophobe
+		}
+	}
+	}
+	
+	random_weight = { base = 5 }
+}
+
+civic_uncivil_mercenary_company = {
+description = "civic_tooltip_uncivil_mercenary_company"
+	potential = {
+	
+	OR = {
+			authority = { OR = { value = auth_bugged_corporate_democratic value = auth_corporate value = auth_bugged_corporate_imperial } }
+			civics = { value = civic_galactic_sovereign_megacorp }
+		}
+	}
+	
+	possible = {
+		ethics = {
+			OR = {
+					text = civic_tooltip_militarist
+					value = ethic_militarist
+					value = ethic_fanatic_militarist
+				}
+			NOT = {
+					value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	
+	random_weight = { base = 5 }
+}
+
+civic_shadow_state = {
+	description = "civic_tooltip_shadow_state_effects"
+	potential = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }	
+	}
+	
+	modification = no
+	
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe	
+			}
+		}
+		civics = {  
+			NOT = { value = civic_inwards_perfection }
+		}		
+	}
+	
+	random_weight = { base = 10 }
+	modifier = {
+		pop_government_ethic_attraction = 0.5
+		pop_growth_speed = -0.1		
+		pop_happiness = -0.1
+		planet_amenities_mult = -0.1		
+		planet_crime_add = -40
+		envoys_add = 1
+		intel_encryption_add = 1
+		intel_decryption_add = 1
+	}
+}
+
+civic_inwards_perfection = {
+    modification = no
+
+	potential = {
+		authority = {
+			NOR = {
+				value = auth_bugged_corporate_democratic
+				value = auth_corporate
+				value = auth_bugged_corporate_imperial
+			}
+		}
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+
+	possible = {
+		ethics = {
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+			OR = {
+				text = civic_tooltip_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
+	}
+
+	description = "civic_tooltip_inwards_perfection_effects"
+
+	modifier = {
+		shipclass_starbase_damage_mult = 0.15
+		starbase_defensive_war_ship_build_speed_mult = 0.5
+		defensive_war_influence_gain_add = 0.5
+		planet_orbital_bombardment_damage = -0.25
+        starbase_defense_platform_capacity_add = 6
+		army_defense_damage_mult = 0.25
+		army_defense_morale_mult = 0.25
+        diplomacy_upkeep_mult = 0.25
+		envoys_add = -1
+		intel_encryption_add = 1
+		intel_decryption_add = -1
+	}
+
+	random_weight = { base = 5 }
+}
+
+xvcv_mdlc_civic_efficient_administration = {
+	potential = { authority = { value = auth_machine_intelligence } }
+	random_weight = { base = 5 }
+	modifier = {
+		empire_size_penalty_mult = -0.1
+	}
+}
+
+civic_machine_ota_updates = {
+	potential = { authority = { value = auth_machine_intelligence } }
+	random_weight = { base = 5 }
+	description = civic_machine_ota_updates_effect
+	modifier = {
+		empire_size_pops_mult = -0.10
+		country_edict_fund_add = 25
+	}
+}

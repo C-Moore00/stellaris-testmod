@@ -1,0 +1,320 @@
+namespace = testmod_origins
+
+country_event = {
+	id = testmod_origins.001
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_interstellar_habitat }
+
+	immediate = {
+		give_technology = { tech = tech_space_mining_1 message = no }
+		give_technology = { tech = tech_hydroponics message = no }
+		give_technology = { tech = tech_habitat_1 message = no }
+		add_research_option = tech_habitat_2
+		if = {
+			limit = { is_ai = yes }
+			giga_reset_ai_start = yes
+		}
+		else = {
+			capital_scope = {
+				solar_system = {
+					remove_star_flag = sol_sector	# cleanup of stuff used to block New Frontiers subclasser
+					star = {
+						set_name = "Interstellar Dwelling"
+						set_planet_flag = has_megastructure
+						set_planet_flag = megastructure
+					}
+				}
+
+				set_planet_flag = gpm_has_planet_rings
+				set_planet_flag = hot_zone				# Real Space (Prevents Rings)
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+
+				prevent_anomaly = yes
+				trigger_megastructure_icon = yes
+				clear_blockers = yes
+				clear_deposits = yes
+				remove_all_districts = yes
+
+				random_list = {
+					15 = { while = { count = 1 add_deposit = d_zro_cloud } }
+					10 = { while = { count = 2 add_deposit = d_zro_cloud } }
+					5 = { while = { count = 3 add_deposit = d_zro_cloud } }
+				}
+				add_deposit = d_arcane_replicator
+				add_district = district_giga_hab_city
+				add_district = district_giga_hab_city
+				add_district = district_giga_hab_city
+				add_district = district_giga_hab_scavenger
+				add_district = district_giga_hab_scavenger
+				add_building = building_giga_interstellar_hydroponic_farm
+				add_building = building_giga_gas_giant_habitation_module
+				add_building = building_factory_1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = testmod_origins.002
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_void_touched }
+
+	immediate = {
+		give_technology = { tech = null_void_beam message = no }
+		give_technology = { tech = tech_mine_dark_matter message = no }
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			set_planet_flag = dportal_event
+			set_planet_flag = dportal_void
+			owner = { set_country_flag = dportal_country }
+			prevent_anomaly = yes
+			add_deposit = d_portal_research_zone
+			add_deposit = d_fungal_caves
+			add_deposit = d_fungal_caves
+			add_deposit = d_fungal_caves
+			add_deposit = d_lichen_fields
+			add_deposit = d_lichen_fields
+			add_deposit = d_strong_currents
+			add_deposit = d_strong_currents
+			add_deposit = d_frozen_gas_lake
+			add_deposit = d_frozen_gas_lake
+			add_deposit = d_powerful_geyser
+			add_deposit = d_submerged_caves
+			add_deposit = d_nightside_mining_operations
+			add_deposit = d_deepcaves_deposit
+			add_deposit = d_biolumen_shores_deposit
+			add_deposit = d_submerged_ore_veins
+			planet_event = { id = colony.3040 days = 1825 random = 1825 }				
+		}
+	}
+}
+
+country_event = {
+	id = testmod_origins.003
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_atlantis }
+
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_modifier = { modifier = gpm_precursor_floating_city multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = gpm_precursor_planetary_shield multiplier = gpm_planet_size_multiplier }
+			add_deposit = gpm_d_precursor_planetary_shield
+			add_deposit = gpm_d_precursor_ruins_5
+			add_deposit = gpm_d_abandoned_stargate
+		}
+	}
+}
+
+country_event = {
+	id = testmod_origins.004
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_rock_n_stone }
+
+	immediate = {
+		give_technology = { tech = tech_gpm_precursor_mechs_discovery message = no }
+		give_technology = { tech = tech_gpm_precursor_mines_discovery_2 message = no }
+		give_technology = { tech = tech_gpm_giant_worm_discovery_2 message = no }
+		give_technology = { tech = tech_habitat_1 message = no }
+		give_technology = { tech = tech_hydroponics message = no }
+		give_technology = { tech = tech_powered_exoskeletons message = no }
+		give_technology = { tech = tech_space_mining_1 message = no }
+		give_technology = { tech = osom_tech_speleology_1 message = no }
+		add_research_option = tech_habitat_2
+		add_research_option = giga_tech_automated_stripmine_2
+		add_research_option = giga_tech_star_lifter
+		add_research_option = giga_tech_crystal_megabore
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			set_planet_flag = gpm_is_radioactive_mantle_mining_habitat
+			set_planet_flag = gpm_is_surface_mining_habitat
+			set_planet_flag = gpm_is_strange_alien_eggs_restriction_habitat
+			set_planet_flag = gpm_is_hydrogen_extraction_habitat
+			set_planet_flag = gpm_is_nitrogen_extraction_habitat
+			set_planet_flag = gpm_is_iron_mining_habitat
+			remove_all_districts = yes
+			clear_blockers = yes
+			prevent_anomaly = yes
+			change_planet_size = -10
+			add_district = district_hab_housing
+			add_district = district_hab_housing
+			add_district = district_hab_housing
+			add_district = district_hab_industrial
+			add_district = district_hab_industrial
+			add_deposit = gpm_d_asteroid_mining_infrastructure
+			add_deposit = gpm_d_moon_mining_infrastructure
+			add_deposit = gpm_d_alien_egg_infrastructure
+			add_deposit = gpm_d_spice_collecting_infrastructure
+			add_deposit = d_arcane_replicator
+			add_deposit = d_expanded_dome_system_1
+			add_deposit = d_expanded_dome_system_1
+			remove_building = building_research_lab_1
+			remove_building = building_commercial_zone
+			add_building = building_hab_major_capital
+			add_building = building_giga_interstellar_hydroponic_farm
+			add_building = building_mineral_purification_plant
+			add_building = building_factory_1
+		}
+	}
+}
+
+
+country_event = {
+	id = testmod_origins.005
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_craftworld_dwellers }
+
+	immediate = {
+		give_technology = { tech = psionic_theory message = no }
+		give_technology = { tech = tech_gpm_proto_forests_discovery_2 message = no }
+		give_technology = { tech = tech_pdshroudcomposer message = no }
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_building = building_clone_vats
+			add_building = building_evolution_monastery_two
+			add_deposit = d_volatile_motes_2
+		}
+	}
+}
+
+country_event = {
+	id = testmod_origins.006
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_crystal_world_mod }
+	
+	immediate = {
+		give_technology = { tech = tech_gpm_proto_forests_discovery_2 message = no }
+		capital_scope = {
+			solar_system = {
+				set_star_flag = inside_reflection_purple_nebula
+			}
+		}
+	}
+}
+
+country_event = {
+	id = testmod_origins.007
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_galactic_switchboard }
+	
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			save_event_target_as = switchboard_planet
+			prevent_anomaly = yes
+			add_modifier = { modifier = gpm_precursor_communication_hub multiplier = gpm_planet_size_multiplier }
+			solar_system = { spawn_megastructure = { type = "spy_orb_ruined" planet = prev } }
+			set_planet_flag = has_megastructure
+		}
+		give_technology = { tech = tech_gpm_precursor_communication_hub_discovery_2 message = no }
+	}
+}
+
+country_event = {
+	id = testmod_origins.008
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_defensive_doctrine }
+	
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_modifier = { modifier = gpm_precursor_eternal_fortress multiplier = gpm_planet_size_multiplier }
+			add_building = building_giga_maginot_stronghold
+			set_planet_size = 25
+		}
+		give_technology = { tech = tech_gpm_ruined_battlefield_discovery_2 message = no }
+		give_technology = { tech = tech_gpm_ruined_battlefield_discovery message = no }
+		give_technology = { tech = tech_gpm_precursor_outpost_ruins_discovery_2 message = no }
+		give_technology = { tech = tech_gpm_surface_of_bones_discovery_2 message = no }
+		give_technology = { tech = tech_gpm_precursor_battleground_ruins_discovery message = no }
+		give_technology = { tech = tech_gpm_precursor_battleground_ruins_discovery_2 message = no }
+		give_technology = { tech = tech_gpm_precursor_outpost_ruins_discovery message = no }
+		give_technology = { tech = tech_gpm_precursor_eternal_fortress_discovery message = no }
+		give_technology = { tech = tech_gpm_precursor_eternal_fortress_discovery_2 message = no }
+		give_technology = { tech = tech_global_defense_grid message = no }
+		give_technology = { tech = tech_ground_defense_planning message = no }
+		give_technology = { tech = tech_combat_training message = no }
+		give_technology = { tech = tech_centralized_command message = no }
+		give_technology = { tech = giga_tech_asteroid_artillery message = no }
+	}
+}
+
+country_event = {
+	id = testmod_origins.009
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_arachnids }
+	
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_modifier = { modifier = gpm_arachnophobia multiplier = gpm_planet_size_multiplier }
+			add_deposit = gpm_d_titanic_cave
+		}
+		give_technology = { tech = tech_gpm_arachnophobia_discovery message = no }
+		give_technology = { tech = tech_gpm_arachnophobia_discovery_2 message = no }
+	}
+}
+
+country_event = {
+	id = testmod_origins.010
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_shroomy }
+	
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_modifier = { modifier = gpm_mushroom_forest multiplier = gpm_planet_size_multiplier }
+			add_deposit = gpm_d_mushroom_forest
+			add_deposit = gpm_d_mushroom_forest
+			add_deposit = gpm_d_mushroom_forest
+			add_deposit = gpm_d_mega_fungi
+		}
+		give_technology = { tech = tech_gpm_mushroom_forest_discovery message = no }
+		give_technology = { tech = tech_gpm_mushroom_forest_discovery_2 message = no }
+	}
+}
+
+country_event = {
+	id = testmod_origins.011
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_origin = origin_ancestral_knowledge }
+	
+	immediate = {
+		capital_scope = {
+			set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+			prevent_anomaly = yes
+			add_modifier = { modifier = mem_into_the_woods_beacon }
+			add_deposit = d_mem_into_the_woods_old_growth
+		}
+		give_technology = { tech = tech_neuroregeneration message = no }
+	}
+}

@@ -1,0 +1,14 @@
+tech_show_planet_size_hidden = {
+	cost = 1000000
+	area = physics
+	tier = 5
+	category = { particles }
+	is_rare = yes
+	weight = 0
+	prereqfor_desc = {
+		custom = {
+			title = "allow_systemcraft_p0"
+			desc = "desc_systemcraft_p0"
+		}
+	}
+}

@@ -1,0 +1,811 @@
+@base_moon_distance = 10
+
+# interstellar habitat standalone origin
+spacehabitat_origin_init = {
+	class = "sc_habitat"
+	name = "Interstellar Habitat"
+	usage = origin
+	flags = { empire_home_system habitat_system }
+
+	planet = {
+		class = star
+		orbit_distance = 0
+
+		planet = {
+			class = "pc_interstellar_habitat"
+			orbit_distance = 0
+			orbit_angle = 1
+			size = 15
+			home_planet = yes
+			has_ring = no
+
+			init_effect = {
+				set_planet_flag = giga_interstellar_hab
+				set_planet_flag = hot_zone				# Real Space (Prevents Rings)
+				set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+				set_planet_flag = has_megastructure		# Vanilla uses to check if an orbital station can be built here
+				set_planet_flag = colony_event			# Vanilla uses to prevent unwanted events on planets
+				add_modifier = { modifier = "interstellar_habitat" days = -1 }
+				random_list = {
+					15 = { while = { count = 1 add_deposit = d_zro_cloud } }
+					10 = { while = { count = 2 add_deposit = d_zro_cloud } }
+					5 = { while = { count = 3 add_deposit = d_zro_cloud } }
+				}
+			}
+		}
+	}
+
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 1 }
+		initializer = "rs_special_init_11"
+	}
+
+	init_effect = {
+		set_star_flag = sol_sector ### to stop New Frontiers from overriding 'planet' classes
+		spawn_megastructure = { type = "interstellar_habitat_2" }
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+	}
+}
+
+# Class O for Light of Eternity Origin
+testmod_o_star = {
+	class = "sc_o_hyper"
+	flags = { giga_o_star_system }
+    usage = origin
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+		if = {
+			limit = {
+				is_inside_nebula = no
+			}
+			create_nebula = {
+				radius = 30
+			}
+		}
+	}
+
+	planet = {
+		class = pc_o_hyper_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+		init_effect = {
+			create_ambient_object = {
+				type = "giga_o_star_nebula_1"
+				entity_offset_height = 0
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+				set_ambient_object_flag = o_star_solar_wind
+			}
+		}
+	}
+
+	planet = {
+		class = pc_giga_o_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+		init_effect = {
+			add_modifier = {
+				modifier = giga_o_star_modifier
+				days = -1
+			}
+		}
+	}
+
+    planet = {
+		count = { min = 1 max = 1 }
+		class = pc_molten
+		orbit_distance = 50
+		size = { min = 20 max = 25 }
+	}
+
+	change_orbit = 30
+
+	asteroid_belt = { type = rocky_asteroid_belt	radius = 80 }
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	planet = {
+		count = { min = 2 max = 3 }
+		class = rl_giga_o_star_planets
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		moon = {
+			count = { min = 0 max = 2 }
+			class = rl_giga_o_star_planets
+			orbit_distance = 10
+			orbit_angle = { min = 90 max = 270 }
+			size = { min = 5 max = 14 }
+		}
+	}
+    planet = {
+		count = 1
+		orbit_distance = 30
+		home_planet = yes
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 23 max = 30 }
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			generate_empire_home_planet = yes
+			prevent_anomaly = yes
+            add_modifier = { modifier = gpm_dense_atmospheres multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = gpm_clear_skies multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = gpm_ancient_temple multiplier = gpm_planet_size_multiplier }
+			add_deposit = gpm_d_ancient_temple
+		}
+	}
+    planet = {
+		count = { min = 3 max = 4 }
+		class = rl_giga_o_star_planets
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		moon = {
+			count = { min = 0 max = 2 }
+			class = rl_giga_o_star_planets
+			orbit_distance = 10
+			orbit_angle = { min = 90 max = 270 }
+			size = { min = 5 max = 14 }
+		}
+	}
+}
+
+#Ilumia Crystal Modded
+pd_origin_init_crystal_mod = {
+	class = "sc_b"
+	usage = origin
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+		if = {
+			limit = {
+				is_inside_nebula = no
+			}
+			create_nebula = {
+				radius = 40
+			}
+			set_star_flag = pd_unique_nebula
+		}
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 70
+	}
+	max_instances = 1
+	scaled_spawn_chance = 14
+	spawn_chance = 100
+	usage_odds = 100
+	planet = {
+		count = 1
+		class = "pc_b_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 20
+		has_ring = no
+	}
+	planet = {
+		count = 1
+		class = "pc_b_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 10
+		has_ring = no
+		init_effect = {
+			create_ambient_object = {
+				type = "rare_nebula_1"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+		}
+	}
+	planet = {
+		name="Lave"
+		count = { min = 1 max = 1 }
+		class = pc_molten
+		orbit_distance = 45
+		size = { min = 15 max = 25 }
+	}
+	planet = {
+		count = 1
+		class = pc_rare_crystal_asteroid
+		orbit_distance = 25
+		orbit_angle = { min = 0 max = 360 }
+		init_effect = {
+			add_deposit = d_rare_crystals_2
+		}
+	}	
+	planet = {
+		count = 6
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 0 max = 360 }
+	}
+	planet = {
+		count = 1
+		class = pc_barren
+		size = {min = 20 max = 30}
+		orbit_distance = 25
+		change_orbit = 10
+		init_effect = {
+			add_modifier = { modifier = terraforming_candidate }
+		}
+	}
+	planet = {
+		name="Mariana"
+		count = 1
+		class = pc_melted_frozen
+		orbit_distance = 25
+		size = { min = 22 max = 25 }
+		change_orbit = 10
+	}
+	planet = {
+		class = pc_crystal
+		size = 25
+		orbit_distance = 25
+		orbit_angle = 85
+		has_ring = no
+		modifiers = none
+		starting_planet = yes
+		init_effect = {
+			set_planet_flag = colony_event
+			prevent_anomaly = yes
+			set_planet_flag = pdcrystalhelpit
+			add_modifier = { modifier = crystal }
+			add_deposit = d_crystal_guild
+		}
+		moon = {
+			name="Nocturna"	
+			count = { min = 1 max = 1 }
+			size = 12
+			class = pc_barren
+			orbit_distance = 10
+		}
+		
+		moon = {
+			name="Aurora"
+			count = { min = 1 max = 1 }
+			size = 9
+			class = pc_diamond
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		count = 1
+		class = pc_barren_cold
+		orbit_distance = 35
+		moon = {
+			count = { min = 1 max = 1 }
+			size = { min = 7 max = 12 }
+			orbit_distance = 10
+		}
+		moon = {
+			count = { min = 1 max = 1 }
+			size = { min = 7 max = 12 }
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 35				
+		moon = {
+			count = { min = 1 max = 1 }
+			size = { min = 7 max = 15 }
+			orbit_distance = 10
+		}
+		moon = {
+			count = { min = 3 max = 3 }
+			size = { min = 6 max = 15 }
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		count = 1
+		class = pc_gas_giant
+		orbit_distance = 35		
+		change_orbit = 10		
+		moon = {			
+			count = { min = 1 max = 1 }
+			size = { min = 7 max = 15 }
+			orbit_distance = 10
+		}
+		moon = {			
+			count = { min = 2 max = 2 }
+			size = { min = 6 max = 15 }
+			orbit_distance = 5
+		}
+	}
+	planet = {
+		name="Obscurité"
+		count = 1
+		size = { min = 15 max = 25 }
+		class = pc_frozen
+		orbit_distance = 35
+		moon = {
+			name="Farpoint"
+			class = pc_frozen
+			count = { min = 1 max = 1 }
+			orbit_distance = 10
+		}
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 1 }
+		initializer = "rs_special_init_11"
+	}
+}
+
+
+void_touched_init = {
+	class = "sc_black_hole"
+	usage = origin
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 45
+	}
+	
+	planet = {
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 28
+	}
+
+	planet = {
+		class = "pc_rare_crystal_asteroid"
+		orbit_distance = 45
+		orbit_angle = 1
+		size = 2
+		has_ring = no
+		init_effect = {
+			clear_deposits = yes
+			add_deposit = d_rare_crystals_1
+		}
+	}
+
+	planet = {
+		class = "pc_rare_crystal_asteroid"
+		orbit_distance = 0
+		orbit_angle = 98
+		size = 2
+		has_ring = no
+		init_effect = {
+			clear_deposits = yes
+			add_deposit = d_rare_crystals_1
+		}
+	}
+	
+	planet = {
+		class = "pc_rare_crystal_asteroid"
+		orbit_distance = 0
+		orbit_angle = 115
+		size = 2
+		has_ring = no
+		init_effect = {
+			clear_deposits = yes
+			add_deposit = d_minerals_3
+		}
+	}
+
+	planet = {
+		count = 1
+		size = { min = 20 max = 30 }
+		class = random_non_colonizable
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	planet = {
+		class = "pc_mzilli_shadow"
+		orbit_distance = 30
+		orbit_angle = { min = 0 max = 359 }
+		size = { min = 18 max = 23 }
+		starting_planet = yes
+		init_effect = {
+			generate_empire_home_planet = yes
+			set_planet_flag = colony_event
+			prevent_anomaly = yes
+		}
+	}
+
+	planet = {
+		count = { min = 3 max = 5}
+		class = random_non_colonizable
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+
+		moon = {
+			count = { min = 0 max = 2 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 10
+		}
+	}
+}
+
+atlantis_init = {
+	class = "sc_a"
+	flags = { empire_home_system }
+	usage = origin
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 115
+	}
+	init_effect = {
+		every_neighbor_system = { set_star_flag = empire_cluster }
+		generate_home_system_resources = yes
+		if = {
+			limit = {
+				is_inside_nebula = no
+			}
+			create_nebula = {
+				radius = 25
+			}
+			set_star_flag = ocean_paradise_nebula
+		}
+	}
+
+	# Star
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 28
+		has_ring = no
+	}
+
+	# Homeworld
+	change_orbit = 60
+	planet = {
+		class = "pc_ocean"
+		orbit_angle = -45
+		orbit_distance = 0
+		size = 20
+		entity = "ocean_paradise_planet_01_entity"
+		modifiers = none
+		starting_planet = yes
+		flags = { ignore_startup_effect }
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		moon = {
+			class = pc_ocean
+			count = { min = 1 max = 1 }
+			size = 11
+			orbit_distance = 10
+			init_effect = {
+				add_modifier = {
+					modifier = gpm_precursor_mines
+					days = -1
+					multiplier = gpm_planet_size_multiplier
+				}
+			}
+		}
+	}
+
+	# Nearby Frozen World to show off homeworld size
+	planet = {
+		class = pc_frozen
+		orbit_angle = -17
+		orbit_distance = 25
+		size = @frozen_world_min_size
+	}
+
+	# Ice Asteroids
+	change_orbit = 26
+	planet = {
+		count = 10
+		class = pc_ice_asteroid
+		orbit_distance = { min = 0 max = 1 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+	}
+
+	# Random Frozen Worlds
+	planet = {
+		count = 3
+		class = pc_frozen
+		orbit_distance = { min = 20 max = 40 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @frozen_world_min_size max = @frozen_world_max_size }
+	}
+}
+
+rock_n_stone_init = {
+	class = "sc_g"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 145
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 290
+	}
+
+	flags = { empire_home_system }
+
+	usage = origin
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+
+	planet = {
+		name = "Hoxxes I"
+		class = "pc_molten"
+		orbit_distance = 40
+		orbit_angle = 15
+		size = 10
+		has_ring = no
+	}
+
+	planet = {
+		name = "Hoxxes II"
+		class = "pc_toxic"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+	}
+
+	planet = {
+		name = "Hoxxes III"
+		class = "pc_barren"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 18
+
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		moon = {
+			class = "pc_barren_cold"
+			size = 5
+			orbit_distance = 12
+			orbit_angle = 40
+			has_ring = no
+		}
+	}
+
+	planet = {
+		name = "Hoxxes IV"
+		class = "pc_broken"
+		orbit_distance = 25
+		orbit_angle = 60
+		size = 35
+		has_ring = no
+		init_effect = {
+			add_modifier = { modifier = "gpm_ultra_rich_2" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_titanic_predators" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_gemstones" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_radioactive_mantle" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_dunes" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_arachnophobia" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_strange_alien_eggs" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_giant_scorpioids" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_carnivorous_flies" multiplier = gpm_planet_size_multiplier }
+			add_modifier = { modifier = "gpm_toxic_gas" multiplier = gpm_planet_size_multiplier }
+		}
+		moon = {
+			class = "pc_habitat"
+			size = 6
+			orbit_distance = 5
+			orbit_angle = 40
+			starting_planet = yes
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 30
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		name = "Hoxxes V"
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = -160
+		size = 35
+		has_ring = no
+		change_orbit = 6
+
+		moon = {
+			class = "pc_molten"
+			size = 6
+			orbit_distance = 10
+			orbit_angle = 110
+			has_ring = no
+		}
+		moon = {
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 2.5
+			orbit_angle = 10
+			has_ring = no
+		}
+		moon = {
+			class = "pc_frozen"
+			size = 9
+			orbit_distance = 2.5
+			orbit_angle = 80
+			has_ring = no
+		}
+		moon = {
+			class = "pc_frozen"
+			size = 7
+			orbit_distance = 2.5
+			orbit_angle = -155
+			has_ring = no
+		}
+	}
+
+	planet = {
+		name = "Hoxxes VI"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 170
+		size = 30
+		has_ring = yes
+		change_orbit = 7
+
+		moon = {
+			class = "pc_frozen"
+			size = 8
+			orbit_distance = 12
+			orbit_angle = 320
+			has_ring = no
+		}
+	}
+
+	planet = {
+		name = "Hoxxes VII"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = 125
+		size = 20
+		has_ring = no
+		entity = "gas_giant_03_entity"
+	}
+
+	planet = {
+		name = "Hoxxes VIII"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = -195
+		size = 20
+		has_ring = no
+		entity = "gas_giant_02_entity"
+		change_orbit = 4
+
+		moon = {
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 7
+			orbit_angle = 115
+			has_ring = no
+		}
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 30
+		orbit_angle = -210
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = -95
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = 285
+		size = 5
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = -80
+		size = 5
+		has_ring = no
+	}

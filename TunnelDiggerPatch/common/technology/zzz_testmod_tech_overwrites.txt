@@ -1,0 +1,112 @@
+#planetary drive yard to remove -5% cost
+giga_tech_planetary_drive_yard_shipyard = {
+	cost = 50000
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	is_rare = yes
+	prerequisites = { "giga_tech_planetary_drive_yard" }
+	weight = @tier4weight1
+	prereqfor_desc = {
+		custom = { title = "allow_planetary_drive_yard_shipyard"	desc = "desc_planetary_drive_yard_shipyard" }
+	}
+
+	weight_modifier = {
+		modifier = { factor = 1.25 research_leader = { area = engineering has_trait = "leader_trait_expertise_voidcraft" } }
+		modifier = { factor = 0 has_utopia = no }
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 2
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = giga_tech_planetary_drive_yard_shipyard }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier
+		modifier = { factor = 1.25 research_leader = { area = engineering has_trait = "leader_trait_expertise_voidcraft" } }
+		modifier = { factor = 0 has_utopia = no }
+	}
+}
+
+# gravity manipulation to remove -15% megastructure build cost
+esc_tech_gravity_manipulation = {
+	area = physics
+	category = { field_manipulation }
+	tier = 4
+	cost = @tier4cost3
+	weight = @tier4weight3
+	prerequisites = { "esc_tech_grand_research_initiative" "tech_physics_3" }
+	is_rare = yes # purely for cosmetic purposes
+	gateway = ESC_GRAVITY_MANIPULATION
+
+	prereqfor_desc = {
+		custom = {
+			title = "ESC_TECH_UNLOCK_GRAVITY_MANIPULATION_TITLE"
+			desc = "ESC_TECH_UNLOCK_GRAVITY_MANIPULATION_DESC"
+		}
+	}
+
+	modifier = {
+		starbase_buildings_cost_mult = -0.1
+		planet_buildings_cost_mult = -0.1
+		planet_districts_cost_mult = -0.1
+		starbase_upgrade_cost_mult = -0.1
+		starbase_modules_cost_mult = -0.1
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.15
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = @ESC_AI_tech_weight_multiplier
+		modifier = {
+			factor = 1.15
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
+			}
+		}
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+	}
+}

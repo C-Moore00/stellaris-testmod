@@ -1,0 +1,22 @@
+@tier5cost4 = 56000
+
+####################
+### STRG TECH ###
+####################
+tech_STRG_Advanced_Ship_Desgin = {
+	area = engineering
+	cost = @tier5cost4
+	Tier = 5
+	category = { particles }
+	prerequisites = { "tech_battleships" "tech_energy_lance_1" }
+	is_rare = yes
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_STRG"
+			desc = "TECH_UNLOCK_STRG_DESC"
+		}
+	}
+	
+	ai_weight = 100
+}

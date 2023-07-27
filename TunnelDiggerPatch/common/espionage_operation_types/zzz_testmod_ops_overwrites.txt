@@ -1,0 +1,307 @@
+@diff_tm = 0 # 공격적 암호적용 전용
+
+@diff_t0 = 4
+@diff_t1 = 5
+@diff_t2 = 6
+@diff_t3 = 7
+@diff_t4 = 8
+@diff_t5 = 9
+@diff_t6 = 10
+@diff_t7 = 11
+@diff_t8 = 12
+@diff_t9 = 13
+
+op_trade_agreement = {
+    target = none
+    categories = { op_cat_manipulation op_cat_diplomacy }
+    picture = GFX_evt_acquire_asset
+    desc = op_trade_agreement_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+            energy = 200
+			consumer_goods = 100
+        }
+        upkeep = {
+            energy = 5
+			consumer_goods = 5
+        }
+    }
+
+    spy_power_cost = 25
+    potential = { 
+		has_nemesis = yes 
+        owner = { is_gestalt = no }
+        target = { is_gestalt = no }
+        root.owner = {
+			is_ai = no			
+        }		
+	}
+    allow = {
+        custom_tooltip = {
+            fail_text = operation_trade_agreement_too_recent
+            owner = {
+                NOT = { has_country_flag = recently_trade_agreement@root.target }
+            }
+        }
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+        custom_tooltip = { ##토탈워 제국이면 이거 못걸게
+            fail_text = target_is_purge_empire
+            owner = {
+                NOT = { ##근데 원래도 군체와 기계한텐 못쓰게 만들었으니까 그냥 정화자 시빅 하나만 더 조건에 추가하면 되겠네?
+					has_valid_civic = civic_fanatic_purifiers		
+				}
+            }			
+        }		
+    }
+    stage = { #Install operatives
+        difficulty = @diff_t2
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = operation.20010
+    }
+    stage = { #Target identified
+        difficulty = @diff_t2
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.20011
+    }	
+    stage = { #Result
+        difficulty = @diff_t2
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.20012
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}
+
+op_credit_plunder = {
+    target = none
+    categories = { op_cat_sabotage op_cat_economy }
+    picture = GFX_evt_acquire_asset
+    desc = op_credit_plunder_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+			energy = 200
+        }
+        upkeep = {
+            physics_research = 30
+        }
+    }
+
+    spy_power_cost = 40
+    potential = { 
+		has_nemesis = yes 
+        #target = { has_authority = auth_hive_mind }
+        root.owner = {
+			is_ai = no			
+        }		
+	}
+    allow = {
+        custom_tooltip = {
+            fail_text = operation_credit_plunder_no_targets
+            target = {
+				resource_stockpile_compare = {
+					resource = energy
+					value > 2000
+				}				
+            }
+        }	
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = { #Install operatives
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = operation.20420
+    }
+    stage = { #Target identified
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.20421
+    }	
+    stage = { #Result
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.20422
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}
+
+op_ship_accident = {
+    target = none
+    categories = { op_cat_sabotage op_cat_military }
+    picture = GFX_evt_acquire_asset
+    desc = op_ship_accident_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+			energy = 2000
+        }
+        upkeep = {
+            engineering_research = 10
+        }
+    }
+
+    spy_power_cost = 45	#원래 45
+    potential = { 
+		has_nemesis = yes 
+        root.owner = {
+			is_ai = no			
+        }		
+	}
+    allow = {
+        custom_tooltip = {
+            fail_text = operation_ship_accident_no_targets
+            target = {
+                any_owned_ship = {
+                    OR = {
+						is_ship_size = corvette
+						is_ship_size = destroyer
+						is_ship_size = cruiser
+						is_ship_size = battleship
+						is_ship_size = titan						
+                    }
+                }
+            }
+        }	
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = { #Install operatives
+        difficulty = @diff_t5	#원래 전부 t5등급
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = operation.20130
+    }
+    stage = { #Target identified
+        difficulty = @diff_t5
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.20131
+    }	
+    stage = { #Result
+        difficulty = @diff_t5
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.20132
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}
+
+## 훈련중 대규모 함대사고 유발
+op_fleet_accident = {
+    target = none
+    categories = { op_cat_sabotage op_cat_military }
+    picture = GFX_evt_acquire_asset
+    desc = op_fleet_accident_desc
+    stages = 3
+
+    resources = {
+        category = operations
+        cost = {
+			energy = 5000
+        }
+        upkeep = {
+            influence = 0.5
+        }
+    }
+
+    spy_power_cost = 55
+    potential = { 
+		has_nemesis = yes 
+        root.owner = {
+			is_ai = no			
+        }		
+	}
+    allow = {
+        custom_tooltip = {
+            fail_text = operation_fleet_accident_too_recent
+            owner = {
+                NOT = { has_country_flag = recently_fleet_accident@root.target }
+            }
+        }	
+        custom_tooltip = {
+            fail_text = operation_fleet_accident_no_targets
+            target = {
+                any_owned_ship = {
+                    OR = {
+						is_ship_size = corvette
+						is_ship_size = destroyer
+						is_ship_size = cruiser
+						is_ship_size = battleship
+						is_ship_size = titan
+                    }
+                }
+            }
+        }	
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = { #Install operatives
+        difficulty = @diff_t6
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = operation.20430
+    }
+    stage = { #Target identified
+        difficulty = @diff_t6
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.20431
+    }	
+    stage = { #Result
+        difficulty = @diff_t6
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.20432
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}

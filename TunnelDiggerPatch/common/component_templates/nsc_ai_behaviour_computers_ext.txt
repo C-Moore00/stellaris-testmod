@@ -1,0 +1,247 @@
+############
+### COST ###
+############
+@cost0 = 2
+@cost1 = 4
+@cost2 = 6
+
+########################################
+### AI BEHAVIOUR COMPUTER COMPONENTS ###
+########################################
+
+### STATIONARY ###
+utility_component_template = {
+	key = "ai_behaviour_stationary_150"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_stationary_150"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_stationary_150"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+	
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_stationary_250"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_stationary_250"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_stationary_250"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_stationary_300"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_stationary_300"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_stationary_300"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+### FLANK ###
+utility_component_template = {
+	key = "ai_behaviour_flank_120"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_flank_120"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_flank_120"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_flank_150"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_flank_150"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_flank_150"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_flank_200"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_flank_200"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_flank_200"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_flank_250"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_flank_250"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ship_behavior = "ai_behaviour_flank_250"
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_flank_300"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_flank_300"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ship_behavior = "ai_behaviour_flank_300"
+
+	ai_weight = { weight = 0 }
+}
+
+### HIT AND RUN ###
+utility_component_template = {
+	key = "ai_behaviour_hitnrun_120"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_hitnrun_120"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_hitnrun_120"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_hitnrun_150"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_hitnrun_150"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_hitnrun_150"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_hitnrun_200"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_hitnrun_200"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_hitnrun_200"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_hitnrun_250"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_hitnrun_250"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_hitnrun_250"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}
+
+utility_component_template = {
+	key = "ai_behaviour_hitnrun_300"
+	size = small
+
+	icon = "GFX_ship_part_ai_behaviour_hitnrun_300"
+	icon_frame = 1
+
+	component_set = "ai_behaviour"
+	ship_behavior = "ai_behaviour_hitnrun_300"
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @cost2 }
+	}
+
+	ai_weight = { weight = 0 }
+}

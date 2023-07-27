@@ -1,0 +1,127 @@
+@terraforming_cost_level_1 = 2000 #<-- same category terraforming
+@terraforming_cost_level_2 = 5000 #<-- different category terraforming
+@terraforming_cost_level_3 = 10000 #<-- Hive and machine
+@terraforming_cost_level_4 = 15000 #<-- climate restoration
+@terraforming_cost_gaia = 7500
+@terraforming_duration_level_1 = 1800 #<-- same category terraforming
+@terraforming_duration_level_2 = 3600 #<-- different category terraforming
+@terraforming_duration_level_3 = 5400 #<-- opposite category terraforming and uninhabitable to inhabitable terraforming
+@terraforming_duration_level_4 = 7200 #<-- special terraforming, e.g. to gaia, machine world etc.
+
+#eyeball
+terraform_link = {
+	from = pc_glacial
+	to = pc_eyeball
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_tidallocked } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_tidallocked remove_deposit = d_physics_5 add_modifier = { modifier = pdeyeball days = -1 } add_deposit = d_eyeball_site } }
+	ai_weight = { weight = 1 }
+}
+
+#Tidally-Locked
+terraform_link = {
+	from = pc_continental
+	to = pc_tidallylocked
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_tidallocked } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_tidallocked remove_deposit = d_physics_5 add_modifier = { modifier = tidal_locked2 days = -1 } add_deposit = d_nightside_mining_operations } }
+	ai_weight = { weight = 1 }
+}
+
+#Lanthanide
+terraform_link = {
+	from = pc_alpine
+	to = pc_lanthanide
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_lanthanide } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_lanthanide remove_deposit = d_minerals_5 reroll_deposits = yes add_modifier = { modifier = pdlanthanide days = -1 } add_deposit = d_lanthanide_deposit } }
+	ai_weight = { weight = 1 }
+}
+
+terraform_link = {
+	from = pc_continental
+	to = pc_karst
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_karst } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_karst remove_deposit = d_minerals_5 reroll_deposits = yes add_modifier = { modifier = karst days = -1 } add_deposit = d_karst_cave } }
+	ai_weight = { weight = 1 }
+}
+
+terraform_link = {
+	from = pc_glacial
+	to = pc_geothermal
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_geothermal } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_geothermal remove_deposit = d_alloys_5 reroll_deposits = yes add_modifier = { modifier = geothermal days = -1 } add_deposit = d_geothermal_pools_deposit } }
+	ai_weight = { weight = 1 }
+}
+
+#Superhabitable
+terraform_link = {
+	from = pc_continental
+	to = pc_superhabitable
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_superhabitable } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_superhabitable remove_deposit = d_minerals_5 reroll_deposits = yes add_modifier = { modifier = superhabitable days = -1 } add_deposit = d_ancient_motes } }
+	ai_weight = { weight = 1 }
+}
+
+#Salt
+terraform_link = {
+	from = pc_desert
+	to = pc_salt
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_salt } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_salt remove_deposit = d_minerals_5 reroll_deposits = yes add_modifier = { modifier = pdsalt days = -1 } add_deposit = d_salt_caves } }
+	ai_weight = { weight = 1 }
+}
+
+#Primal
+terraform_link = {
+	from = pc_ash
+	to = pc_primal
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_primal } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_primal remove_deposit = d_alloys_5 reroll_deposits = yes add_modifier = { modifier = primal days = -1 } add_deposit = d_lava_lakes } }
+	ai_weight = { weight = 1 }
+}
+
+#Aquatic
+terraform_link = {
+	from = pc_ocean
+	to = pc_aquatic
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { OR = { has_modifier = pdterra_aquatic has_modifier = pdhabsubglacialocean } } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_aquatic remove_deposit = d_society_5 remove_modifier = pdhabsubglacialocean reroll_deposits = yes add_modifier = { modifier = aquatic days = -1 } add_deposit = d_aquatic_trench } }
+	ai_weight = { weight = 1 }
+}
+
+#Coral
+terraform_link = {
+	from = pc_ocean
+	to = pc_coral
+	resources = { category = terraforming cost = { energy = @terraforming_cost_level_4 } }
+	duration = @terraforming_duration_level_3
+	potential = { from = { has_modifier = pdterra_coral } }
+	condition = { has_technology = "tech_climate_restoration" }
+	effect = { from = { remove_modifier = pdterra_aquatic remove_deposit = d_society_5 remove_modifier = pdhabsubglacialocean reroll_deposits = yes add_modifier = { modifier = aquatic days = -1 } add_deposit = d_aquatic_trench } }
+	ai_weight = { weight = 1 }
+}

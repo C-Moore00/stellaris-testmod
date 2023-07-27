@@ -1,0 +1,107 @@
+#adds psionic damage to the tradition
+tr_est_shroudborn_5 = {
+
+	modifier = {
+		ship_shield_mult = 0.25
+		weapon_type_energy_weapon_damage_mult = 0.15
+        weapon_type_psionic_weapon_damage_mult = 0.15
+	}
+
+	ai_weight = { factor = 5000 }
+}
+#fix for bug branch authority compat
+tr_est_mystery_1 = {
+	modifier = {
+		espionage_hostile_operation_difficulty_add = 1
+		pop_factions_produces_mult = 0.20
+	}
+
+	tradition_swap = {
+		name = tr_est_mystery_1_democratic
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			or = {
+				has_authority = auth_democratic
+				has_authority = auth_bugged_direct_democratic
+				has_authority = auth_bugged_corporate_democratic
+			}
+			NOT = { has_civic = civic_shadow_council }
+		}
+		modifier = {
+			country_election_cost_mult = -0.25
+			espionage_hostile_operation_difficulty_add = 1
+		}
+		weight = { factor = 1 }
+	}
+	tradition_swap = {
+		name = tr_est_mystery_1_oligarchic
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			or = {
+				has_authority = auth_oligarchic
+				has_authority = auth_corporate
+			}
+			NOT = { has_civic = civic_shadow_council }
+		}
+		modifier = {
+			country_election_cost_mult = -0.50
+			espionage_hostile_operation_difficulty_add = 1
+		}
+		weight = { factor = 1 }
+	}
+	tradition_swap = {
+		name = tr_est_mystery_1_dictatorial
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_authority = auth_dictatorial
+			NOT = { has_civic = civic_shadow_council }
+		}
+		modifier = {
+			country_election_cost_mult = -0.75
+			espionage_hostile_operation_difficulty_add = 1
+		}
+		weight = { factor = 1 }
+	}
+
+	ai_weight = { factor = 5000 }
+}
+
+
+#reduced colony size reduction from 50 to 20
+xvcv_mdlc_tr_machinery_adopt = {
+	possible = {
+		OR = {
+			has_authority = auth_machine_intelligence
+			xvcv_mdlc_synth_empire_trigger = yes
+		}
+	}
+	modifier = {
+		empire_size_colonies_mult = -0.2
+	}
+	tradition_swap = {
+		name = xvcv_mdlc_tr_machinery_adopt_robot
+		inherit_name = yes
+		trigger = { xvcv_mdlc_synth_empire_trigger = yes }
+		custom_tooltip = xvcv_mdlc_tr_machinery_adopt_robot_tooltip
+		weight = { factor = 1 }
+	}
+}
+
+#overwrite base foundation - +50% empire size is too fucked
+tr_est_foundation_adopt = {
+	modifier = {
+		all_technology_research_speed = 0.05
+		pop_government_ethic_attraction = 0.15
+		empire_size_systems_mult = 4
+	}
+}
+
+#overwrite base confederacy - -25% empire size bonus is too fucked the other way
+tr_est_confederacy_adopt = {
+	modifier = {
+		empire_size_systems_mult = -0.5
+	}
+}

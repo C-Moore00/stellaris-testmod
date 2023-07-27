@@ -1,0 +1,615 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict0Cost = 2
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+
+@EdictPerpetual = -1
+
+@campaignCost = 15
+@hiveFood = 15
+@campaignDuration = -1
+
+@ambitionDuration = -1
+@ambitionCost = 75
+@ambitionUpkeep = 75
+
+#################
+# Toggle Edicts
+#################
+nutritional_plenitude = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_growth_speed = 0.20
+		biological_pop_happiness = 0.05
+		lithoid_pop_happiness = 0.05
+		planet_pops_organics_food_upkeep_mult = 0.25
+		planet_pops_organics_minerals_upkeep_mult = 0.25
+	}
+
+	potential = {
+		is_gestalt = no
+	}
+
+	prerequisites = {
+		"tech_gene_crops"
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+nutritional_plenitude_hive = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_growth_speed = 0.20
+		planet_pops_organics_food_upkeep_mult = 0.25
+		planet_pops_organics_minerals_upkeep_mult = 0.25
+	}
+
+	potential = {
+		is_hive_empire = yes
+	}
+
+	prerequisites = {
+		"tech_gene_crops"
+	}
+
+	show_tech_unlock_if = {
+		is_hive_empire = yes
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+fleet_supremacy = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	prerequisites = {
+		"tech_doctrine_fleet_size_1"
+	}
+
+	modifier = {
+		ship_starting_experience_add = 100
+		starbase_shipyard_build_speed_mult = 0.10
+		diplo_weight_naval_mult = 0.25
+		ships_upkeep_mult = 0.1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
+bureau_of_espionage = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		intel_decryption_add = 2
+		add_base_country_intel = 10
+		spy_network_levels_add = 10
+	}
+
+	potential = {
+		has_comms_with_alien_empire = yes
+		is_gestalt = no
+	}
+
+	show_tech_unlock_if = {
+		is_gestalt = no
+	}
+
+	prerequisites = {
+		tech_decryption_1
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+		modifier = {
+			factor = 2
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 0
+			is_egalitarian = yes
+		}
+	}
+}
+
+diplomatic_grants = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		envoys_add = 2
+		diplo_weight_mult = 0.2
+	}
+
+	potential = {
+		has_tradition = tr_diplomacy_adopt
+		has_comms_with_alien_empire = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+capacity_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_technician_energy_produces_add = 1
+		custom_tooltip = edict_capacity_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	prerequisites = {
+		"tech_power_hub_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+mining_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_miners_minerals_produces_add = 1
+		custom_tooltip = edict_mining_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	prerequisites = {
+		"tech_mineral_purification_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+farming_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_farmers_food_produces_add = 1
+		custom_tooltip = edict_farming_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	prerequisites = {
+		"tech_food_processing_1"
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}
+
+industrial_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_artisans_consumer_goods_produces_add = 2
+		custom_tooltip = edict_industrial_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	potential = {
+		country_uses_consumer_goods = yes
+	}
+
+	prerequisites = {
+		tech_global_production_strategy
+	}
+
+	show_tech_unlock_if = {
+		country_uses_consumer_goods = yes
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
+research_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		all_technology_research_speed = 0.10
+		custom_tooltip = edict_research_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	potential = {
+		has_tradition = tr_discovery_databank_uplinks
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
+forge_subsidies = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_metallurgists_alloys_produces_add = 1
+		custom_tooltip = edict_forge_subsidies_tooltip
+		show_only_custom_tooltip = no
+	}
+
+	prerequisites = {
+		tech_global_production_strategy
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+encourage_free_thought = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+	edict_cap_usage = 1
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_ethics_shift_speed_mult = 1
+		pop_government_ethic_attraction = 0.50
+	}
+
+	potential = {
+		is_egalitarian = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+greater_than_ourselves = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_resettlement_unemployed_mult = 2.00
+	}
+
+	potential = {
+		is_galactic_community_member = yes
+		OR = {
+			is_active_resolution = "resolution_greatergood_greater_than_ourselves"
+			is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+			is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
+			is_active_resolution = "resolution_greatergood_6"
+		}
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+education_campaign = {
+	length = @campaignDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = campaigns
+		upkeep = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		species_leader_exp_gain = 0.25
+	}
+
+	potential = {
+		NOR = { has_ethic = ethic_gestalt_consciousness has_ethic = ethic_fanatic_competitive }
+		has_technology = tech_planetary_unification
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			has_edict = healthcare_campaign
+		}
+	}
+}
+
+recycling_campaign = {
+	length = @campaignDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = campaigns
+		upkeep = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = -0.10
+	}
+
+	potential = {
+		NOR = { has_ethic = ethic_gestalt_consciousness has_ethic = ethic_fanatic_anthropocentric }
+		has_technology = tech_planetary_unification
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictLowPrio
+			has_monthly_income = {
+				resource = consumer_goods
+				value < 0
+			}
+		}
+	}
+}
+
+scientific_revolution = {
+	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
+
+	resources = {
+		category = edicts
+
+		cost = {
+			unity = @ambitionCost
+			multiplier = value:edict_size_effect
+		}
+
+		upkeep = {
+			unity = @ambitionUpkeep
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		all_technology_research_speed = 0.20
+		num_tech_alternatives_add = 1
+	}
+
+	potential = {
+		has_technology = tech_ascension_theory
+		NOT = { has_valid_civic = civic_imperial_cult }
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+focusing_zro_supplements = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = ship_edicts
+		upkeep = {
+			sr_zro = 1
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		has_technology = esc_tech_psionic_weapons
+	}
+
+	modifier = {
+		weapon_type_psionic_weapon_damage_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+nanite_injections = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = ship_edicts
+		upkeep = {
+			nanites = 1
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		has_technology = esc_tech_synthetic_lifeform_studies
+	}
+
+	modifier = {
+		weapon_type_nanite_weapon_damage_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+extended_ship_nutrition = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = ship_edicts
+		upkeep = {
+			food = 25
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	potential = {
+		has_technology = esc_tech_biological_weapons
+	}
+
+	modifier = {
+		weapon_type_biological_weapon_damage_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+enhanced_integration_initiative = {
+	length = @EdictDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = campaigns
+		upkeep = {
+			influence = 1
+		}
+	}
+
+	potential = {
+		has_technology = esc_tech_biological_weapons
+	}
+
+	modifier = {
+		country_subject_integration_speed_add = 1
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

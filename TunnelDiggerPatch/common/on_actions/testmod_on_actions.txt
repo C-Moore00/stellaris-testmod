@@ -1,0 +1,23 @@
+on_game_start_country = {	
+    events = { 
+        testmod_events.001
+        testmod_events.002
+        testmod_origins.001
+        testmod_origins.002
+        testmod_origins.003
+        testmod_origins.004
+        testmod_origins.005
+        testmod_origins.006
+        testmod_origins.007
+        testmod_origins.008
+        testmod_origins.009
+        testmod_origins.010
+        testmod_origins.011
+    }
+} 
+
+on_terraforming_complete = {
+	events = {
+		esap_generic.1
+	}
+}

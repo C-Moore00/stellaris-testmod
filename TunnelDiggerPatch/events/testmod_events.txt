@@ -1,0 +1,11 @@
+namespace = testmod_events
+
+country_event = {
+	id = testmod_events.001
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		give_technology = { tech = tech_automated_exploration message = no }
+	}
+}

@@ -1,0 +1,11 @@
+# Null void beam Improved
+null_void_beam2 = {
+	area = physics
+	cost = @tier5cost2
+	tier = 5
+	is_rare = yes
+	category = { particles }
+	ai_update_type = military
+    prerequisites = { "null_void_beam" }
+	weight = @tier4weight1
+}
